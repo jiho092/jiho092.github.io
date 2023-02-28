@@ -10,7 +10,7 @@ cd C:\Users\leeji\Desktop\수업\3-2\프로그래밍 언어\프로젝트
 ```
 
     C:\Users\leeji\Desktop\수업\3-2\프로그래밍 언어\프로젝트
-    
+
 
 
 ```python
@@ -59,7 +59,7 @@ protect.head()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -155,7 +155,7 @@ for i in range(len(city)):
 
     Requirement already satisfied: geopy in c:\users\leeji\anaconda3\lib\site-packages (2.3.0)
     Requirement already satisfied: geographiclib<3,>=1.52 in c:\users\leeji\anaconda3\lib\site-packages (from geopy) (2.0)
-    
+
 
 
 ```python
@@ -174,7 +174,7 @@ for i in range(len(city)):
     Requirement already satisfied: urllib3<1.27,>=1.21.1 in c:\users\leeji\anaconda3\lib\site-packages (from requests->geocoder) (1.26.12)
     Requirement already satisfied: certifi>=2017.4.17 in c:\users\leeji\anaconda3\lib\site-packages (from requests->geocoder) (2022.9.24)
     Requirement already satisfied: charset-normalizer<3,>=2 in c:\users\leeji\anaconda3\lib\site-packages (from requests->geocoder) (2.0.4)
-    
+
 
 
 ```python
@@ -182,7 +182,7 @@ cd C:\Users\leeji\Desktop\수업\3-2\프로그래밍 언어\프로젝트
 ```
 
     C:\Users\leeji\Desktop\수업\3-2\프로그래밍 언어\프로젝트
-    
+
 
 
 ```python
@@ -266,7 +266,7 @@ bohang
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -395,16 +395,16 @@ for i in range(12377):
 
 
     ---------------------------------------------------------------------------
-
+    
     NameError                                 Traceback (most recent call last)
-
+    
     Input In [21], in <cell line: 4>()
           2 add = []
           4 for i in range(12377):
     ----> 5     add.append((geolocator.reverse('{} , {}'.format(df['위도'][i],df['경도'][i]))).address)
           6     if i % 20 == 0:
           7         print(i,'times')
-    
+
 
     NameError: name 'geolocator' is not defined
 
@@ -424,16 +424,16 @@ df
 
 
     ---------------------------------------------------------------------------
-
+    
     NameError                                 Traceback (most recent call last)
-
+    
     Input In [22], in <cell line: 3>()
           2 #중간에 위도 경도 결측치가 있어서 0으로 채운후 다시 진행
           3 for i in range(11933, 12377):
     ----> 4     add.append((geolocator.reverse('{} , {}'.format(df['위도'][i],df['경도'][i]))).address)
           5     if i % 20 == 0:
           6         print(i,'times')
-    
+
 
     NameError: name 'geolocator' is not defined
 
@@ -468,7 +468,7 @@ re_time.head()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -554,7 +554,7 @@ sei.head()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -716,7 +716,7 @@ dat
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -1146,7 +1146,7 @@ dat1.head()
     22       0       0         0  0.000997  
     23       1       5         5  0.000942  
     24       3      15        17  0.000932  
-    
+
 
 
 
@@ -1160,7 +1160,7 @@ dat1.head()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -1289,7 +1289,7 @@ dat1.describe()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -1624,10 +1624,10 @@ plt.show()
       fig.canvas.print_figure(bytes_io, **kw)
     C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 51088 (\N{HANGUL SYLLABLE JA}) missing from current font.
       fig.canvas.print_figure(bytes_io, **kw)
-    
 
 
-    
+
+
 ![png](output_45_1.png)
     
 
@@ -1671,7 +1671,7 @@ dat1
     lower bound 값은 -3.0 이다.
     upper bound 값은 69.0 이다.
     총 이상치 개수는 2 이다.
-    
+
 
 
 
@@ -1685,7 +1685,7 @@ dat1
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -2248,7 +2248,7 @@ dat_scaler
     
     See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
       dat_scaler.loc[i] = fitted[i]
-    
+
 
 
 
@@ -2262,7 +2262,7 @@ dat_scaler
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -2916,11 +2916,11 @@ plt.show()
       fig.canvas.print_figure(bytes_io, **kw)
     C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 51088 (\N{HANGUL SYLLABLE JA}) missing from current font.
       fig.canvas.print_figure(bytes_io, **kw)
-    
 
 
-    
-![png](output_49_1.png)
+
+
+![png](output_49_1.png)![output_49_1](../images/2023-02-28-Silver Zone/output_49_1.png)
     
 
 
@@ -2957,12 +2957,12 @@ sns.heatmap(dfX.corr(), annot = True, fmt = '3.2f', cmap = cmap)
 
     <AxesSubplot:>
 
+![output_50_1](../images/2023-02-28-Silver Zone/output_50_1.png)
 
 
-
-    
+​    
 ![png](output_50_1.png)
-    
+​    
 
 
 # 다중 공선성 확인
@@ -3005,7 +3005,7 @@ print(vif)
     8     58.329263    사고다발구역
     9    319.861225    다발구역건수
     10   225.172485  다발구역사상자수
-    
+
 
 
 ```python
@@ -3033,7 +3033,7 @@ print(vif)
     2    3.272614  잔여시간표시기
     3    3.016120  보행작동신호기
     4    3.072518   사고다발구역
-    
+
 
 
 ```python
@@ -3077,7 +3077,7 @@ print(results.summary())
     
     Notes:
     [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
-    
+
 
 
 ```python
@@ -3123,7 +3123,7 @@ print(results.summary())
     
     Notes:
     [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
-    
+
 
 # 모델 스코어
 
@@ -3154,7 +3154,7 @@ score
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -3380,9 +3380,8 @@ plt.barh(score['행정구역'],score['스코어'],color=colors)
 
 
 
-    
 ![png](output_58_1.png)
-    
+    ![output_58_1](../images/2023-02-28-Silver Zone/output_58_1.png)
 
 
 
