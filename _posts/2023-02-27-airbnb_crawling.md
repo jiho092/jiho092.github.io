@@ -2,14 +2,16 @@
 layout: single
 title: "에어비앤비 크롤링"
 categories: "coding"
+tag: [python, crawling]
+toc: true
 ---
+![nn](/assets/images/ball_images.jpeg)
 
 
 
 # 1. 에어비앤비 검색 패턴 파악하기
 
 ## 1.1크롤링을 위해 두 모듈 사용
-
 
 ```python
 import requests

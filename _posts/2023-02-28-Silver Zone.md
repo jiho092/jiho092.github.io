@@ -1,6 +1,9 @@
 ---
 layout: single
 title: "노인 사고 예방을 위한 분석"
+categories: "coding"
+tag: python
+toc: true
 ---
 
 
