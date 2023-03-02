@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "에어비앤비 크롤링"
+categories: "coding"
 ---
 
 
