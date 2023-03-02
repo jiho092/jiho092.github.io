@@ -2,7 +2,7 @@
 layout: single
 title: "깃허브 블로그 활용법"
 categories: "blog"
-tag: [blog]
+tag: [blog,image]
 toc: true
 ---
 
