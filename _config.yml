@@ -283,5 +283,12 @@ defaults:
       share: true
       related: true
       show_date : true
+      toc: true #목차
+      author_profile: false #측면 프로필 제거
+      # sidebar:        #측면에 docs 설정(navigation.yml)
+      #     nav: "docs"
+      toc_sticky: true
+      toc_label: 목차
+
 
 date_format : "%Y.%m.%d"

@@ -3,11 +3,13 @@ layout: single
 title: "노인 사고 예방을 위한 분석"
 categories: "coding"
 tag: python
-toc: true
-author_profile: false
-sidebar:
-    nav: "docs"
-#search: false
+# toc: true
+# author_profile: false
+# sidebar:
+#     nav: "docs"
+# toc_sticky: true
+# toc_label: 목차
+# #search: false
 ---
 
 

@@ -3,10 +3,12 @@ layout: single
 title: "깃허브 블로그 활용법"
 categories: "blog"
 tag: [blog,image]
-toc: true
-author_profile: false
-sidebar:
-    nav: "docs"
+# toc: true
+# author_profile: false
+# toc_sticky: true
+# toc_label: 목차
+# sidebar:
+#     nav: "docs"
 ---
 
 해당 내용은 깃허브 블로그 작성법을 공부하면서 작성한 게시글입니다.
