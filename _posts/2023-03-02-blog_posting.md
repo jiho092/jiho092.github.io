@@ -44,3 +44,59 @@ html에서는 다음과 같은 방법으로 추가할 수 있다.
 [이미지 예시]
 
 마찬가지로 이미지가 추가된 것을 확인할 수 있다.
+
+
+# 2. 공지 띄우기
+쉽게 알아보기 위해 다음과 같은 코드를 작성한다.
+공지사항 아래에 작성하면 나타난다.
+
+
+## 2.1 한줄 띄우기
+```python
+{: .notice--danger} #빨강
+{: .notice--primary} #회색
+{: .notice--warning} #주황
+{: .notice--info} #하늘
+{: .notice--success} #초록
+```
+
+빨간색
+{: .notice--danger}
+회색
+{: .notice--primary}
+주황색
+{: .notice--warning}
+하늘
+{: .notice--info}
+
+
+## 2.2 여러줄 띄우기
+```python
+<div class='notice--success'>
+<h4> 문장을 넣을 수도 있습니다. </h4>
+<ui>
+    <li>공지사항 순서1</li>
+    <li>공지사항 순서2</li>
+    <li>공지사항 순서3</li>
+</ui>
+</div>
+```
+
+<div class='notice--success'>
+<h4> 여러줄 넣기. </h4>
+<ui>
+    <li>공지사항 순서1</li>
+    <li>공지사항 순서2</li>
+    <li>공지사항 순서3</li>
+</ui>
+</div>
+
+
+# 3. 버튼 추가하기
+입력한 주소로 이동하는 버튼을 추가할 수 있다.
+```python
+[버튼](https://google.com){: .btn .btn--danger}
+```
+[버튼](https://google.com){: .btn .btn--danger}
+
+
