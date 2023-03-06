@@ -1,11 +1,13 @@
 ---
 layout: single
-title: "에어비앤비 크롤링"
-categories: "coding"
-tag: [python, crawling]
-toc: true
+title: "에어비앤비 크롤링" #제목
+categories: "coding" #카테고리설정
+tag: [python, crawling] #테그
+toc: true #목차
+author_profile: false #측면 프로필 제거
+sidebar:        #측면에 docs 설정(navigation.yml)
+    nav: "docs"
 ---
-![nn](/assets/images/ball_images.jpeg)
 
 
 
