@@ -2,7 +2,7 @@
 layout: single
 title: "에어비앤비 크롤링" #제목
 categories: "coding" #카테고리설정
-tag: [python, crawling] #테그
+tag: [python, crawling, 제주여행분석] #테그
 ---
 
 

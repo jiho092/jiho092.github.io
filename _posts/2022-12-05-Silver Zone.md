@@ -2,7 +2,7 @@
 layout: single
 title: "노인 사고 예방을 위한 분석"
 categories: "coding"
-tag: python
+tag: [python, 노인보호구역]
 # toc: true
 # author_profile: false
 # sidebar:
@@ -14,11 +14,6 @@ tag: python
 
 
 
-```python
-cd C:\Users\leeji\Desktop\수업\3-2\프로그래밍 언어\프로젝트
-```
-
-    C:\Users\leeji\Desktop\수업\3-2\프로그래밍 언어\프로젝트
 
 
 
