@@ -45,6 +45,18 @@ html에서는 다음과 같은 방법으로 추가할 수 있다.
 
 마찬가지로 이미지가 추가된 것을 확인할 수 있다.
 
+## 1.3 이미지 위치 설정방법
+align을 사용하면 이미지의 위치를 설정할 수 있다.
+```python
+{: .align-center} #가운데 정렬
+{: .align-left} #왼쪽 정렬
+{: .align-right} #오른쪽 정렬
+
+![ball](/assets/images/ball_images.jpeg){: .align-center}
+```
+![ball](/assets/images/ball_images.jpeg){: .align-center}
+
+
 
 # 2. 공지 띄우기
 쉽게 알아보기 위해 다음과 같은 코드를 작성한다.
