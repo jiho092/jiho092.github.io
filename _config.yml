@@ -145,7 +145,9 @@ footer:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url:
-
+dark_theme_toggle        : true
+after_footer_scripts:
+  - /assets/js/custom/dark-theme.js
 
 # Reading Files
 include:
@@ -295,3 +297,5 @@ defaults:
 
 
 date_format : "%Y.%m.%d"
+
+
