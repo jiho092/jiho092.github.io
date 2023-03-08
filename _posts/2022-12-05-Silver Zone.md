@@ -157,35 +157,14 @@ for i in range(len(city)):
 !pip install geopy
 ```
 
-    Requirement already satisfied: geopy in c:\users\leeji\anaconda3\lib\site-packages (2.3.0)
-    Requirement already satisfied: geographiclib<3,>=1.52 in c:\users\leeji\anaconda3\lib\site-packages (from geopy) (2.0)
-
 
 
 ```python
 !pip install geocoder
 ```
 
-    Requirement already satisfied: geocoder in c:\users\leeji\anaconda3\lib\site-packages (1.38.1)
-    Requirement already satisfied: six in c:\users\leeji\anaconda3\lib\site-packages (from geocoder) (1.16.0)
-    Requirement already satisfied: future in c:\users\leeji\anaconda3\lib\site-packages (from geocoder) (0.18.2)
-    Requirement already satisfied: ratelim in c:\users\leeji\anaconda3\lib\site-packages (from geocoder) (0.1.6)
-    Requirement already satisfied: requests in c:\users\leeji\anaconda3\lib\site-packages (from geocoder) (2.28.1)
-    Requirement already satisfied: click in c:\users\leeji\anaconda3\lib\site-packages (from geocoder) (8.0.4)
-    Requirement already satisfied: colorama in c:\users\leeji\anaconda3\lib\site-packages (from click->geocoder) (0.4.5)
-    Requirement already satisfied: decorator in c:\users\leeji\anaconda3\lib\site-packages (from ratelim->geocoder) (5.1.1)
-    Requirement already satisfied: idna<4,>=2.5 in c:\users\leeji\anaconda3\lib\site-packages (from requests->geocoder) (3.4)
-    Requirement already satisfied: urllib3<1.27,>=1.21.1 in c:\users\leeji\anaconda3\lib\site-packages (from requests->geocoder) (1.26.12)
-    Requirement already satisfied: certifi>=2017.4.17 in c:\users\leeji\anaconda3\lib\site-packages (from requests->geocoder) (2022.9.24)
-    Requirement already satisfied: charset-normalizer<3,>=2 in c:\users\leeji\anaconda3\lib\site-packages (from requests->geocoder) (2.0.4)
 
 
-
-```python
-cd C:\Users\leeji\Desktop\수업\3-2\프로그래밍 언어\프로젝트
-```
-
-    C:\Users\leeji\Desktop\수업\3-2\프로그래밍 언어\프로젝트
 
 
 
@@ -243,7 +222,7 @@ df2
 
 ```python
 #업데이트한 파일 저장
-df.to_csv('C:/Users/leeji/Desktop/보행_작동신호기.csv', index = False)
+df.to_csv('보행_작동신호기.csv', index = False)
 ```
 
 
@@ -252,12 +231,6 @@ bohang = pd.read_csv("보행_작동신호기.csv")
 
 #해당 파일에서 행정구역에 포함된 보행작동 신호기 수를 수집
 ```
-
-
-```python
-bohang
-```
-
 
 
 
@@ -398,20 +371,6 @@ for i in range(12377):
 ```
 
 
-    ---------------------------------------------------------------------------
-    
-    NameError                                 Traceback (most recent call last)
-    
-    Input In [21], in <cell line: 4>()
-          2 add = []
-          4 for i in range(12377):
-    ----> 5     add.append((geolocator.reverse('{} , {}'.format(df['위도'][i],df['경도'][i]))).address)
-          6     if i % 20 == 0:
-          7         print(i,'times')
-
-
-    NameError: name 'geolocator' is not defined
-
 
 
 ```python
@@ -425,21 +384,6 @@ for i in range(11933, 12377):
 df['address'] = add
 df
 ```
-
-
-    ---------------------------------------------------------------------------
-    
-    NameError                                 Traceback (most recent call last)
-    
-    Input In [22], in <cell line: 3>()
-          2 #중간에 위도 경도 결측치가 있어서 0으로 채운후 다시 진행
-          3 for i in range(11933, 12377):
-    ----> 4     add.append((geolocator.reverse('{} , {}'.format(df['위도'][i],df['경도'][i]))).address)
-          5     if i % 20 == 0:
-          6         print(i,'times')
-
-
-    NameError: name 'geolocator' is not defined
 
 
 
@@ -1075,19 +1019,19 @@ dat
 
 
 ```python
-dat.to_csv('C:/Users/leeji/Desktop/플밍_최종데이터.csv', index = False)
+dat.to_csv('최종데이터.csv', index = False)
 ```
 
 
 ```python
-dat = pd.read_csv("플밍_최종데이터.csv")
+dat = pd.read_csv("최종데이터.csv")
 ```
 
 # 회귀분석
 
 
 ```python
-dat = pd.read_csv("플밍_최종데이터2.csv")
+dat = pd.read_csv("최종데이터2.csv")
 #데이터 분석 도중 추가로 신호등 있는 횡단보도와 없는 횡단보도의 데이터를 가져옴
 dat['사고비율'] = dat['사고건수']/dat['노인인구수']
 print(dat)
@@ -1466,174 +1410,9 @@ sns.pairplot(dat[col_name])
 plt.show()
 ```
 
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 45432 (\N{HANGUL SYLLABLE NO}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 51064 (\N{HANGUL SYLLABLE IN}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 48372 (\N{HANGUL SYLLABLE BO}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 54840 (\N{HANGUL SYLLABLE HO}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 44396 (\N{HANGUL SYLLABLE GU}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 50669 (\N{HANGUL SYLLABLE YEOG}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 49688 (\N{HANGUL SYLLABLE SU}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 54945 (\N{HANGUL SYLLABLE HOENG}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 45800 (\N{HANGUL SYLLABLE DAN}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 46020 (\N{HANGUL SYLLABLE DO}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 51092 (\N{HANGUL SYLLABLE JAN}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 50668 (\N{HANGUL SYLLABLE YEO}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 49884 (\N{HANGUL SYLLABLE SI}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 44036 (\N{HANGUL SYLLABLE GAN}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 54364 (\N{HANGUL SYLLABLE PYO}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 44592 (\N{HANGUL SYLLABLE GI}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 54665 (\N{HANGUL SYLLABLE HAENG}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 51089 (\N{HANGUL SYLLABLE JAG}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 46041 (\N{HANGUL SYLLABLE DONG}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 49888 (\N{HANGUL SYLLABLE SIN}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 49324 (\N{HANGUL SYLLABLE SA}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 44256 (\N{HANGUL SYLLABLE GO}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 45796 (\N{HANGUL SYLLABLE DA}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 48156 (\N{HANGUL SYLLABLE BAL}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 44148 (\N{HANGUL SYLLABLE GEON}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 49345 (\N{HANGUL SYLLABLE SANG}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 51088 (\N{HANGUL SYLLABLE JA}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 45432 (\N{HANGUL SYLLABLE NO}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 51064 (\N{HANGUL SYLLABLE IN}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 48372 (\N{HANGUL SYLLABLE BO}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 54840 (\N{HANGUL SYLLABLE HO}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 44396 (\N{HANGUL SYLLABLE GU}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 50669 (\N{HANGUL SYLLABLE YEOG}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 49688 (\N{HANGUL SYLLABLE SU}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 54945 (\N{HANGUL SYLLABLE HOENG}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 45800 (\N{HANGUL SYLLABLE DAN}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 46020 (\N{HANGUL SYLLABLE DO}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 51092 (\N{HANGUL SYLLABLE JAN}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 50668 (\N{HANGUL SYLLABLE YEO}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 49884 (\N{HANGUL SYLLABLE SI}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 44036 (\N{HANGUL SYLLABLE GAN}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 54364 (\N{HANGUL SYLLABLE PYO}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 44592 (\N{HANGUL SYLLABLE GI}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 54665 (\N{HANGUL SYLLABLE HAENG}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 51089 (\N{HANGUL SYLLABLE JAG}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 46041 (\N{HANGUL SYLLABLE DONG}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 49888 (\N{HANGUL SYLLABLE SIN}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 49324 (\N{HANGUL SYLLABLE SA}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 44256 (\N{HANGUL SYLLABLE GO}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 45796 (\N{HANGUL SYLLABLE DA}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 48156 (\N{HANGUL SYLLABLE BAL}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 44148 (\N{HANGUL SYLLABLE GEON}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 49345 (\N{HANGUL SYLLABLE SANG}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 51088 (\N{HANGUL SYLLABLE JA}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 45432 (\N{HANGUL SYLLABLE NO}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 51064 (\N{HANGUL SYLLABLE IN}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 48372 (\N{HANGUL SYLLABLE BO}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 54840 (\N{HANGUL SYLLABLE HO}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 44396 (\N{HANGUL SYLLABLE GU}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 50669 (\N{HANGUL SYLLABLE YEOG}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 49688 (\N{HANGUL SYLLABLE SU}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 54945 (\N{HANGUL SYLLABLE HOENG}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 45800 (\N{HANGUL SYLLABLE DAN}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 46020 (\N{HANGUL SYLLABLE DO}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 51092 (\N{HANGUL SYLLABLE JAN}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 50668 (\N{HANGUL SYLLABLE YEO}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 49884 (\N{HANGUL SYLLABLE SI}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 44036 (\N{HANGUL SYLLABLE GAN}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 54364 (\N{HANGUL SYLLABLE PYO}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 44592 (\N{HANGUL SYLLABLE GI}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 54665 (\N{HANGUL SYLLABLE HAENG}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 51089 (\N{HANGUL SYLLABLE JAG}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 46041 (\N{HANGUL SYLLABLE DONG}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 49888 (\N{HANGUL SYLLABLE SIN}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 49324 (\N{HANGUL SYLLABLE SA}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 44256 (\N{HANGUL SYLLABLE GO}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 45796 (\N{HANGUL SYLLABLE DA}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 48156 (\N{HANGUL SYLLABLE BAL}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 44148 (\N{HANGUL SYLLABLE GEON}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 49345 (\N{HANGUL SYLLABLE SANG}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 51088 (\N{HANGUL SYLLABLE JA}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
 
 
 
-
-![png](output_45_1.png)
-    
 
 
 
@@ -2132,127 +1911,6 @@ dat_scaler
 
 ```
 
-    C:\Users\leeji\AppData\Local\Temp\ipykernel_7096\530206060.py:13: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-      dat_scaler.loc[i] = fitted[i]
-    C:\Users\leeji\AppData\Local\Temp\ipykernel_7096\530206060.py:13: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-      dat_scaler.loc[i] = fitted[i]
-    C:\Users\leeji\AppData\Local\Temp\ipykernel_7096\530206060.py:13: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-      dat_scaler.loc[i] = fitted[i]
-    C:\Users\leeji\AppData\Local\Temp\ipykernel_7096\530206060.py:13: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-      dat_scaler.loc[i] = fitted[i]
-    C:\Users\leeji\AppData\Local\Temp\ipykernel_7096\530206060.py:13: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-      dat_scaler.loc[i] = fitted[i]
-    C:\Users\leeji\AppData\Local\Temp\ipykernel_7096\530206060.py:13: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-      dat_scaler.loc[i] = fitted[i]
-    C:\Users\leeji\AppData\Local\Temp\ipykernel_7096\530206060.py:13: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-      dat_scaler.loc[i] = fitted[i]
-    C:\Users\leeji\AppData\Local\Temp\ipykernel_7096\530206060.py:13: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-      dat_scaler.loc[i] = fitted[i]
-    C:\Users\leeji\AppData\Local\Temp\ipykernel_7096\530206060.py:13: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-      dat_scaler.loc[i] = fitted[i]
-    C:\Users\leeji\AppData\Local\Temp\ipykernel_7096\530206060.py:13: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-      dat_scaler.loc[i] = fitted[i]
-    C:\Users\leeji\AppData\Local\Temp\ipykernel_7096\530206060.py:13: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-      dat_scaler.loc[i] = fitted[i]
-    C:\Users\leeji\AppData\Local\Temp\ipykernel_7096\530206060.py:13: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-      dat_scaler.loc[i] = fitted[i]
-    C:\Users\leeji\AppData\Local\Temp\ipykernel_7096\530206060.py:13: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-      dat_scaler.loc[i] = fitted[i]
-    C:\Users\leeji\AppData\Local\Temp\ipykernel_7096\530206060.py:13: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-      dat_scaler.loc[i] = fitted[i]
-    C:\Users\leeji\AppData\Local\Temp\ipykernel_7096\530206060.py:13: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-      dat_scaler.loc[i] = fitted[i]
-    C:\Users\leeji\AppData\Local\Temp\ipykernel_7096\530206060.py:13: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-      dat_scaler.loc[i] = fitted[i]
-    C:\Users\leeji\AppData\Local\Temp\ipykernel_7096\530206060.py:13: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-      dat_scaler.loc[i] = fitted[i]
-    C:\Users\leeji\AppData\Local\Temp\ipykernel_7096\530206060.py:13: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-      dat_scaler.loc[i] = fitted[i]
-    C:\Users\leeji\AppData\Local\Temp\ipykernel_7096\530206060.py:13: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-      dat_scaler.loc[i] = fitted[i]
-    C:\Users\leeji\AppData\Local\Temp\ipykernel_7096\530206060.py:13: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-      dat_scaler.loc[i] = fitted[i]
-    C:\Users\leeji\AppData\Local\Temp\ipykernel_7096\530206060.py:13: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-      dat_scaler.loc[i] = fitted[i]
-    C:\Users\leeji\AppData\Local\Temp\ipykernel_7096\530206060.py:13: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-      dat_scaler.loc[i] = fitted[i]
-    C:\Users\leeji\AppData\Local\Temp\ipykernel_7096\530206060.py:13: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-      dat_scaler.loc[i] = fitted[i]
-    C:\Users\leeji\AppData\Local\Temp\ipykernel_7096\530206060.py:13: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-      dat_scaler.loc[i] = fitted[i]
-
 
 
 
@@ -2710,222 +2368,8 @@ sns.pairplot(dat[col_name])
 plt.show()
 ```
 
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 49324 (\N{HANGUL SYLLABLE SA}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 44256 (\N{HANGUL SYLLABLE GO}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 44148 (\N{HANGUL SYLLABLE GEON}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 49688 (\N{HANGUL SYLLABLE SU}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 48708 (\N{HANGUL SYLLABLE BI}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 50984 (\N{HANGUL SYLLABLE YUL}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 45432 (\N{HANGUL SYLLABLE NO}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 51064 (\N{HANGUL SYLLABLE IN}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 48372 (\N{HANGUL SYLLABLE BO}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 54840 (\N{HANGUL SYLLABLE HO}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 44396 (\N{HANGUL SYLLABLE GU}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 50669 (\N{HANGUL SYLLABLE YEOG}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 54945 (\N{HANGUL SYLLABLE HOENG}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 45800 (\N{HANGUL SYLLABLE DAN}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 46020 (\N{HANGUL SYLLABLE DO}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 49888 (\N{HANGUL SYLLABLE SIN}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 46321 (\N{HANGUL SYLLABLE DEUNG}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 51080 (\N{HANGUL SYLLABLE ISS}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 50630 (\N{HANGUL SYLLABLE EOBS}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 47196 (\N{HANGUL SYLLABLE RO}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 50672 (\N{HANGUL SYLLABLE YEON}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 51109 (\N{HANGUL SYLLABLE JANG}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 51092 (\N{HANGUL SYLLABLE JAN}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 50668 (\N{HANGUL SYLLABLE YEO}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 49884 (\N{HANGUL SYLLABLE SI}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 44036 (\N{HANGUL SYLLABLE GAN}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 54364 (\N{HANGUL SYLLABLE PYO}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 44592 (\N{HANGUL SYLLABLE GI}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 54665 (\N{HANGUL SYLLABLE HAENG}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 51089 (\N{HANGUL SYLLABLE JAG}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 46041 (\N{HANGUL SYLLABLE DONG}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 45796 (\N{HANGUL SYLLABLE DA}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 48156 (\N{HANGUL SYLLABLE BAL}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 49345 (\N{HANGUL SYLLABLE SANG}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 51088 (\N{HANGUL SYLLABLE JA}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 49324 (\N{HANGUL SYLLABLE SA}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 44256 (\N{HANGUL SYLLABLE GO}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 44148 (\N{HANGUL SYLLABLE GEON}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 49688 (\N{HANGUL SYLLABLE SU}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 48708 (\N{HANGUL SYLLABLE BI}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 50984 (\N{HANGUL SYLLABLE YUL}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 45432 (\N{HANGUL SYLLABLE NO}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 51064 (\N{HANGUL SYLLABLE IN}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 48372 (\N{HANGUL SYLLABLE BO}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 54840 (\N{HANGUL SYLLABLE HO}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 44396 (\N{HANGUL SYLLABLE GU}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 50669 (\N{HANGUL SYLLABLE YEOG}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 54945 (\N{HANGUL SYLLABLE HOENG}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 45800 (\N{HANGUL SYLLABLE DAN}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 46020 (\N{HANGUL SYLLABLE DO}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 49888 (\N{HANGUL SYLLABLE SIN}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 46321 (\N{HANGUL SYLLABLE DEUNG}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 51080 (\N{HANGUL SYLLABLE ISS}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 50630 (\N{HANGUL SYLLABLE EOBS}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 47196 (\N{HANGUL SYLLABLE RO}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 50672 (\N{HANGUL SYLLABLE YEON}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 51109 (\N{HANGUL SYLLABLE JANG}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 51092 (\N{HANGUL SYLLABLE JAN}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 50668 (\N{HANGUL SYLLABLE YEO}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 49884 (\N{HANGUL SYLLABLE SI}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 44036 (\N{HANGUL SYLLABLE GAN}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 54364 (\N{HANGUL SYLLABLE PYO}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 44592 (\N{HANGUL SYLLABLE GI}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 54665 (\N{HANGUL SYLLABLE HAENG}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 51089 (\N{HANGUL SYLLABLE JAG}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 46041 (\N{HANGUL SYLLABLE DONG}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 45796 (\N{HANGUL SYLLABLE DA}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 48156 (\N{HANGUL SYLLABLE BAL}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 49345 (\N{HANGUL SYLLABLE SANG}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\seaborn\axisgrid.py:118: UserWarning: Glyph 51088 (\N{HANGUL SYLLABLE JA}) missing from current font.
-      self._figure.tight_layout(*args, **kwargs)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 49324 (\N{HANGUL SYLLABLE SA}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 44256 (\N{HANGUL SYLLABLE GO}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 44148 (\N{HANGUL SYLLABLE GEON}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 49688 (\N{HANGUL SYLLABLE SU}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 48708 (\N{HANGUL SYLLABLE BI}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 50984 (\N{HANGUL SYLLABLE YUL}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 45432 (\N{HANGUL SYLLABLE NO}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 51064 (\N{HANGUL SYLLABLE IN}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 48372 (\N{HANGUL SYLLABLE BO}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 54840 (\N{HANGUL SYLLABLE HO}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 44396 (\N{HANGUL SYLLABLE GU}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 50669 (\N{HANGUL SYLLABLE YEOG}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 54945 (\N{HANGUL SYLLABLE HOENG}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 45800 (\N{HANGUL SYLLABLE DAN}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 46020 (\N{HANGUL SYLLABLE DO}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 49888 (\N{HANGUL SYLLABLE SIN}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 46321 (\N{HANGUL SYLLABLE DEUNG}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 51080 (\N{HANGUL SYLLABLE ISS}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 50630 (\N{HANGUL SYLLABLE EOBS}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 47196 (\N{HANGUL SYLLABLE RO}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 50672 (\N{HANGUL SYLLABLE YEON}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 51109 (\N{HANGUL SYLLABLE JANG}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 51092 (\N{HANGUL SYLLABLE JAN}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 50668 (\N{HANGUL SYLLABLE YEO}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 49884 (\N{HANGUL SYLLABLE SI}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 44036 (\N{HANGUL SYLLABLE GAN}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 54364 (\N{HANGUL SYLLABLE PYO}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 44592 (\N{HANGUL SYLLABLE GI}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 54665 (\N{HANGUL SYLLABLE HAENG}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 51089 (\N{HANGUL SYLLABLE JAG}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 46041 (\N{HANGUL SYLLABLE DONG}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 45796 (\N{HANGUL SYLLABLE DA}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 48156 (\N{HANGUL SYLLABLE BAL}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 49345 (\N{HANGUL SYLLABLE SANG}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
-    C:\Users\leeji\anaconda3\lib\site-packages\IPython\core\pylabtools.py:151: UserWarning: Glyph 51088 (\N{HANGUL SYLLABLE JA}) missing from current font.
-      fig.canvas.print_figure(bytes_io, **kw)
 
 
-
-
-![png](output_49_1.png)![output_49_1](../images/2023-02-28-Silver Zone/output_49_1.png)
-    
 
 
 
@@ -2961,11 +2405,7 @@ sns.heatmap(dfX.corr(), annot = True, fmt = '3.2f', cmap = cmap)
 
     <AxesSubplot:>
 
-![output_50_1](../images/2023-02-28-Silver Zone/output_50_1.png)
 
-
-​    
-![png](output_50_1.png)
 ​    
 
 
@@ -3383,9 +2823,6 @@ plt.barh(score['행정구역'],score['스코어'],color=colors)
 
 
 
-
-![png](output_58_1.png)
-    ![output_58_1](../images/2023-02-28-Silver Zone/output_58_1.png)
 
 
 
