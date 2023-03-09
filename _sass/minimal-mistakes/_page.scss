@@ -38,12 +38,12 @@ body {
 .page {
   @include breakpoint($large) {
     float: right;
-    width: calc(100% - #{$right-sidebar-width});
+    width: calc(100% - #{$right-sidebar-width-narrow});
     padding-right: $right-sidebar-width-narrow;
   }
 
   @include breakpoint($x-large) {
-    width: calc(100%);
+    width: calc(100% - #{$right-sidebar-width});
     padding-right: $right-sidebar-width;
   }
 
@@ -70,7 +70,8 @@ body {
 
 .page__title {
   margin-top: 0;
-  line-height: 1;
+  line-height: 1.2;
+  color: mix(#fff, $primary-color, 40%)
 
   a {
     color: $text-color;
@@ -88,6 +89,7 @@ body {
 }
 
 .page__content {
+  margin-top: 20px;
   h2 {
     padding-bottom: 0.5em;
     border-bottom: 1px solid $border-color;
