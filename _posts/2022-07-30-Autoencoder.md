@@ -1,8 +1,8 @@
 ---
 layout: single
 title: "Autoencoder, Variational 리뷰" #제목
-categories: "report" #카테고리설정
-tag: [python, paper] #테그
+categories: "paper_review" #카테고리설정
+tag: [paper, autoencoder, VAE] #테그
 ---
 
 # 들어가면서
