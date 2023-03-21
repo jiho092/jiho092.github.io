@@ -171,7 +171,7 @@ Autoencoder에서 encoder를 거치면 바로 latent variable Z가 나오는 반
 VAE에서는 encoder과정을 거치면 두 벡터 mu와 sigma가 나온다.
 두 벡터를 정규분포로 만들고 분포에서 sampling을 통해 Z를 추출하는 것이 VAE의 방법이다.
 샘플링을 할 때, Reparameterization Trick 방법을 사용하는데, N(0,1)을 따르는
-ε_i를 추출하여 mu + sigma*e의 형태를 만들어서 샘플링 한다.
+\\[ε_i\\]를 추출하여 mu + sigma*e의 형태를 만들어서 샘플링 한다.
 reparameterization Trick을 사용하는 이유와 방법은 후에 자세히 설명하도록 하겠다.
 
 ## Loss function
