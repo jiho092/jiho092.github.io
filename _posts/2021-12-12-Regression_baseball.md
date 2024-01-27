@@ -1,8 +1,8 @@
 ---
 layout: single
 title: "한국 프로야구에서 회귀분석을 통한 승리와 타자 기록간의 상관관계 분석 및 시각화" #제목
-categories: "report" #카테고리설정
-tag: [python, 야구분석] #테그
+categories: "프로젝트" #카테고리설정
+tag: ["파이썬", "데이터분석" ] #테그
 ---
 
 본 데이터 분석은 Google colab을 이용하여 분석하였습니다.
