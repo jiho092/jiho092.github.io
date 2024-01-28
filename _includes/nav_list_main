@@ -11,9 +11,10 @@
             📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">{{sum}}</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
       </li>
       <li>
-        <!--span 태그로 카테고리들을 크게 분류 ex) DeepLearning#-->
+
+        <!--span tags broadly categorize categories ex) DeepLearning#-->
         <span class="nav__sub-title">DeepLearning</span>
-            <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+            <!--List pages of the same category with the ul tag-->
             <ul>
                 <!--Deeplearning 카테고리 글들을 모아둔 페이지인 /categories/DeepLearning 주소의 글로 링크 연결-->
                 <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시--> 
@@ -24,6 +25,8 @@
                 {% endfor %}
             </ul>
             <ul>
+                <!--Link to the article at the address /categories/deeplearning-NLP, which is a page that collects articles in the Deeplearning category-->
+                <!--Display the number of posts with that category with category[1].size-->
                 {% for category in site.categories %}
                     {% if category[0] == "deeplearning-NLP" %}
                         <li><a href="/categories/deeplearning-NLP" class="">자연어처리 NLP ({{category[1].size}})</a></li>
@@ -31,12 +34,15 @@
                 {% endfor %}
             </ul>
             <ul>
+                <!--Link to the article at the address /categories/deeplearning-CV, which is a page that collects articles in the Deeplearning category-->
+                <!--Display the number of posts with that category with category[1].size-->
                 {% for category in site.categories %}
                     {% if category[0] == "deeplearning-CV" %}
                         <li><a href="/categories/deeplearning-CV" class="">컴퓨터비전 CV ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
+        
 
          <span class="nav__sub-title">프로젝트</span>
              <ul>
