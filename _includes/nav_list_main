@@ -37,7 +37,17 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-            
+
+         <span class="nav__sub-title">프로젝트</span>
+             <ul>
+                 {% for category in site.categories %}
+                     {% if category[0] == "project" %}
+                         <li><a href="/categories/project" class="">프로젝트 (with C++) ({{category[1].size}})</a></li>
+                     {% endif %}
+                 {% endfor %}
+             </ul>
+
+
          <span class="nav__sub-title">Coding Test</span>
              <ul>
                  {% for category in site.categories %}
