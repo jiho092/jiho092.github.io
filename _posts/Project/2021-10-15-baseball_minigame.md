@@ -1,8 +1,17 @@
 ---
-layout: single
+#layout: single
 title: "야구 미니게임 만들기" #제목
-categories: "코딩" #카테고리설정
-tag: ["파이썬"] #테그
+excerpt : "파이썬으로 미니게임 만들기"
+
+
+categories: 
+    - Project #카테고리설정
+tag: 
+    - ["파이썬"] #테그
+
+
+date: 2021-10-15
+last_modified_at: 2021-10-15
 ---
 
 # 1. 주제 선정 이유
