@@ -288,7 +288,8 @@ defaults:
       show_date : true
       toc: true #목차
       author_profile: true #측면 프로필 제거
-      sidebar: true
+      #sidebar: true
+      sidebar_main: true
       toc_sticky: true
       toc_label: 목차
       mathjax: true
