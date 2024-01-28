@@ -25,15 +25,15 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "deepleanring-NLP" %}
-                        <li><a href="/categories/deepleanring-NLP" class="">자연어처리 NLP ({{category[1].size}})</a></li>
+                    {% if category[0] == "deeplearning-NLP" %}
+                        <li><a href="/categories/deeplearning-NLP" class="">자연어처리 NLP ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "deepleanring-CV" %}
-                        <li><a href="/categories/deepleanring-CV" class="">컴퓨터비전 CV ({{category[1].size}})</a></li>
+                    {% if category[0] == "deeplearning-CV" %}
+                        <li><a href="/categories/deeplearning-CV" class="">컴퓨터비전 CV ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
