@@ -1,8 +1,11 @@
 ---
-layout: single
+#layout: single
 title: "노인 사고 예방을 위한 분석"
-categories: "coding"
-tag: [python, 노인보호구역]
+
+categories: 
+    - Project #카테고리설정
+tag: 
+    - ["파이썬"] #테그
 # toc: true
 # author_profile: false
 # sidebar:
