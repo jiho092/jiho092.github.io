@@ -6,13 +6,6 @@ categories:
     - Project #카테고리설정
 tag: 
     - ["파이썬"] #테그
-# toc: true
-# author_profile: false
-# sidebar:
-#     nav: "docs"
-# toc_sticky: true
-# toc_label: 목차
-# #search: false
 ---
 
 
