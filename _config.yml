@@ -287,7 +287,7 @@ defaults:
 
 
 date_format : "date: %Y-%m-%d"
-
+classes: wide
 dark_theme_toggle        : true
 after_footer_scripts:
   - /assets/js/custom/dark-theme.js

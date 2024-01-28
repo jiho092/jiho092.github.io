@@ -46,3 +46,21 @@
                      {% endif %}
                  {% endfor %}
              </ul>
+
+         <span class="nav__sub-title">블로그</span>
+             <ul>
+                 {% for category in site.categories %}
+                     {% if category[0] == "blog" %}
+                         <li><a href="/categories/blog" class="">블로그 (with C++) ({{category[1].size}})</a></li>
+                     {% endif %}
+                 {% endfor %}
+             </ul>             
+
+         <span class="nav__sub-title">통계학</span>
+             <ul>
+                 {% for category in site.categories %}
+                     {% if category[0] == "statistic" %}
+                         <li><a href="/categories/statistic" class="">통계학 (with C++) ({{category[1].size}})</a></li>
+                     {% endif %}
+                 {% endfor %}
+             </ul>             
