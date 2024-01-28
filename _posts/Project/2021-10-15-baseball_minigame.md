@@ -12,7 +12,9 @@ tag:
 
 date: 2021-10-15
 last_modified_at: 2021-10-15
+classes: wide
 ---
+
 
 # 1. 주제 선정 이유
 
