@@ -1,8 +1,10 @@
 ---
 layout: single
 title: "깃허브 블로그 활용법"
-categories: "blog"
-tag: [blog,image]
+categories: 
+    - Blog #카테고리설정
+tag: 
+    - ["Blog"] #테그
 # toc: true
 # author_profile: false
 # toc_sticky: true

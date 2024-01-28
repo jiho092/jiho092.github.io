@@ -1,8 +1,10 @@
 ---
 layout: single
 title: "Autoencoder, Variational Autoencoder 리뷰" #제목
-categories: "deeplearning_basic" #카테고리설정
-tag: [논문, autoencoder, VAE] #테그
+categories: 
+    - Deeplearning #카테고리설정
+tag: 
+    - ["논문","AutoEncoder"] #테그
 ---
 
 # 들어가면서
