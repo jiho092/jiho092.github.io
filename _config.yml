@@ -110,7 +110,7 @@ author:
   location         : #"South Korea"
   # email            : "leejiho092@naver.com"
   links:
-    - label: "Website"
+    - label: "Home"
       icon: "fas fa-fw fa-link"
       url: "https://jiho092.github.io" 
     - label: "Email"
