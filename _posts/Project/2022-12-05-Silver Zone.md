@@ -1,7 +1,7 @@
 ---
 #layout: single
 title: "노인 사고 예방을 위한 분석"
-
+excerpt : "대학 강의 프로젝트 내용입니다."
 categories: 
     - Project #카테고리설정
 tag: 
@@ -10,7 +10,7 @@ tag:
 
 
 
-
+대학 강의 프로젝트 내용입니다.
 
 
 ```python
