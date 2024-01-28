@@ -42,6 +42,15 @@
                     {% endif %}
                 {% endfor %}
             </ul>
+
+         <span class="nav__sub-title">통계학</span>
+             <ul>
+                 {% for category in site.categories %}
+                     {% if category[0] == "statistic" %}
+                         <li><a href="/categories/statistic" class="">통계학 (with C++) ({{category[1].size}})</a></li>
+                     {% endif %}
+                 {% endfor %}
+             </ul>             
         
 
          <span class="nav__sub-title">프로젝트</span>
@@ -62,11 +71,3 @@
                  {% endfor %}
              </ul>             
 
-         <span class="nav__sub-title">통계학</span>
-             <ul>
-                 {% for category in site.categories %}
-                     {% if category[0] == "statistic" %}
-                         <li><a href="/categories/statistic" class="">통계학 (with C++) ({{category[1].size}})</a></li>
-                     {% endif %}
-                 {% endfor %}
-             </ul>             
