@@ -56,8 +56,8 @@
          <span class="nav__sub-title">프로젝트</span>
              <ul>
                  {% for category in site.categories %}
-                     {% if category[0] == "project" %}
-                         <li><a href="/categories/project" class="">프로젝트 (with C++) ({{category[1].size}})</a></li>
+                     {% if category[0] == "Project" %}
+                         <li><a href="/categories/Project" class="">프로젝트 (with C++) ({{category[1].size}})</a></li>
                      {% endif %}
                  {% endfor %}
              </ul>
@@ -65,8 +65,8 @@
          <span class="nav__sub-title">블로그</span>
              <ul>
                  {% for category in site.categories %}
-                     {% if category[0] == "blog" %}
-                         <li><a href="/categories/blog" class="">블로그 (with C++) ({{category[1].size}})</a></li>
+                     {% if category[0] == "Blog" %}
+                         <li><a href="/categories/Blog" class="">블로그 (with C++) ({{category[1].size}})</a></li>
                      {% endif %}
                  {% endfor %}
              </ul>             
