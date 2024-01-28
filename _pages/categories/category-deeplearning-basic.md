@@ -1,7 +1,7 @@
 ---
 title: "딥러닝 기초"
 layout: archive
-permalink: categories/deeplearningbasic
+permalink: categories/deeplearning_basic
 author_profile: true
 sidebar_main: true
 ---
