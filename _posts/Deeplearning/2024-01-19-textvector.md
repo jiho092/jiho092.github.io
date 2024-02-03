@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "단어의 벡터 표현(Text Vectorization)" #제목
-excerpt : "단어를 벡터로 표현해보자."
+excerpt : ""
 categories: 
     - deeplearningNLP #카테고리설정
 tag: 

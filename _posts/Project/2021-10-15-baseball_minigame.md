@@ -1,7 +1,7 @@
 ---
 #layout: single
 title: "야구 미니게임 만들기" #제목
-excerpt : "파이썬으로 미니게임 만들기"
+excerpt : ""
 
 
 categories: 

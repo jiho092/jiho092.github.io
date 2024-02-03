@@ -20,7 +20,7 @@ classes: wide
 
 input과 weight를 곱한 합을 activation function을 통과시켜 output을 생성한다.
 
-
+수정확인
 
 $$
 y=f(wx+b)

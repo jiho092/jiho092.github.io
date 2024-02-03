@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "Autoencoder, Variational Autoencoder 리뷰" #제목
+excerpt : ""
 categories: 
     - deeplearningbasic #카테고리설정
 tag: 

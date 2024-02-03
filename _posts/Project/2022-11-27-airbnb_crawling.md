@@ -1,7 +1,7 @@
 ---
 #layout: single
 title: "에어비앤비 크롤링" #제목
-excerpt : "에어비앤비에서 데이터를 크롤링합니다."
+excerpt : ""
 categories: 
     - Project #카테고리설정
 tag: 

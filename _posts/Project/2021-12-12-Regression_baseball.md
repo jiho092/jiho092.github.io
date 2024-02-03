@@ -1,6 +1,6 @@
 ---
 title: "한국 프로야구에서 회귀분석을 통한 승리와 타자 기록간의 상관관계 분석 및 시각화" #제목
-excerpt : "본 데이터 분석은 Google colab을 이용하여 분석하였습니다."
+excerpt : ""
 categories: 
     - Project #카테고리설정
 tag: 

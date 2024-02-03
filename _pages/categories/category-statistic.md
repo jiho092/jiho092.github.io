@@ -1,5 +1,5 @@
 ---
-title: "딥러닝 NLP"
+title: "통계학"
 layout: archive
 permalink: categories/statistic
 author_profile: true
