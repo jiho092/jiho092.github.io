@@ -21,7 +21,9 @@ input과 weight를 곱한 합을 activation function을 통과시켜 output을 �
 
 
 
-$y=f(wx+b)$
+$$
+y=f(wx+b)
+$$
 
 
 
@@ -42,7 +44,9 @@ $f() : $  activation function
 
 1.sigmoid
 
-$y = \frac{1}{1+e^{-x}}$
+$$
+y = \frac{1}{1+e^{-x}}
+$$
 
 
 
