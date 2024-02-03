@@ -284,7 +284,6 @@ defaults:
       toc_sticky: true
       toc_label: 목차
       mathjax: true
-      use_math: true
 
 
 date_format : "date: %Y-%m-%d"
