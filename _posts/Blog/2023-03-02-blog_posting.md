@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "깃허브 블로그 활용법"
+excerpt : ""
 categories: 
     - Blog #카테고리설정
 tag: 
@@ -114,3 +115,7 @@ align을 사용하면 이미지의 위치를 설정할 수 있다.
 [버튼](https://google.com){: .btn .btn--danger}
 
 
+# 4. MathJax로 수학식 표현하기
+
+
+$f(x) = x^2+3x+2$
