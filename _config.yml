@@ -283,7 +283,6 @@ defaults:
       sidebar_main: true
       toc_sticky: true
       toc_label: 목차
-      mathjax: true
 
 
 date_format : "date: %Y-%m-%d"
