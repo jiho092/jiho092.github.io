@@ -21,7 +21,9 @@ input과 weight를 곱한 합을 activation function을 통과시켜 output을 �
 
 
 
-$$y=f(wx+b)$$
+$$
+y=f(wx+b)
+$$
 
 
 
@@ -40,9 +42,11 @@ $f() : $  activation function
 
 
 
-1. sigmoid
+1.sigmoid
 
-$$y = \frac{1}{1+e^{-x}}$$
+$$
+y = \frac{1}{1+e^{-x}}
+$$
 
 
 
@@ -50,15 +54,19 @@ $$y = \frac{1}{1+e^{-x}}$$
 
 
 
-2. tanh
+2.tanh
 
-$$f(x) = tanh(x) = \frac{e^{x}+e^{-x}}{e^{x}+e^{-x}}$$
+$$
+f(x) = tanh(x) = \frac{e^{x}+e^{-x}}{e^{x}+e^{-x}}
+$$
 
 
 
-3. ReLU
+3.ReLU
 
-$$f(x) = max(0,x)$$
+$$
+f(x) = max(0,x)
+$$
 
 
 
@@ -66,9 +74,11 @@ gradient vanishing 문제를 해결 but 0이 되면 ReLU가 죽음 → 다양한
 
 
 
-4. softmax
+4.softmax
 
-$$softmax(x_{i}) = \frac{e^{x_{i}}}{ \sum_f^k e^{x_{i}}}$$
+$$
+softmax(x_{i}) = \frac{e^{x_{i}}}{ \sum_f^k e^{x_{i}}}
+$$
 
 
 
