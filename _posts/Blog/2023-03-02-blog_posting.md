@@ -117,7 +117,9 @@ align을 사용하면 이미지의 위치를 설정할 수 있다.
 
 # 4. MathJax로 수학식 표현하기
 
-https://mkkim85.github.io/blog-apply-mathjax-to-jekyll-and-github-pages/
+[블로그 링크](https://mkkim85.github.io/blog-apply-mathjax-to-jekyll-and-github-pages/){: .btn .btn--danger}
+
+
 
 해당 블로그의 방법을 참고하였다.
 
