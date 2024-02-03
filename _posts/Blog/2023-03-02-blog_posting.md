@@ -117,8 +117,9 @@ align을 사용하면 이미지의 위치를 설정할 수 있다.
 
 # 4. MathJax로 수학식 표현하기
 
-MathJax를 True로 설정해주면,
-LaTeX와 비슷한 방법으로 사용할 수 있다.
+https://mkkim85.github.io/blog-apply-mathjax-to-jekyll-and-github-pages/
+
+해당 블로그의 방법을 참고하였다.
 
 
 $f(x) = x^2+3x+2$
