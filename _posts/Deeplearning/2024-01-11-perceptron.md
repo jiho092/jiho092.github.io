@@ -6,6 +6,7 @@ categories:
     - deeplearningbasic #카테고리설정
 tag: 
     - ["deeplearning"] #테그
+use_math: true
 
 date: 2024-01-11
 last_modified_at: 2024-01-11
