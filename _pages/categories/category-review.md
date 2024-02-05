@@ -1,3 +1,4 @@
+---
 title: "논문리뷰"
 layout: archive
 permalink: categories/review
