@@ -71,7 +71,7 @@
                  {% endfor %}
              </ul>             
 
-        <span class="nav__sub-title">논문리뷰</span>
+        <span class="nav__sub-title">발표자료</span>
              <ul>
                  {% for category in site.categories %}
                      {% if category[0] == "review" %}
