@@ -84,6 +84,8 @@ $PE_{(pos,2i+1)} = cos(pos/10000^{2i/d_{model}})$
 
 $Attention(Q,K,V) = softmax(\frac{QK^T}{\sqrt{d_k}})V$
 
+$\sqrt{d_k} :$ scale factor
+
 $MultiHead(Q,K,V) = Concat(head_1,head_2,...,head_h)W^O$
 
 $head_i = Attention(QW_i^Q,KW_i^K,VW_i^V)$
@@ -96,7 +98,16 @@ Residual Learning은 그림에서 왼쪽으로 나가서 Multi-Head Attention을
 
 위 4개의 과정이 Encoder Layer 하나의 과정이고 Layer만큼 반복하여 연산을 수행한다. 여기서 Layer들의 parameter는 각각 다르다.
 
-마지막 Layer에서 출력된 값이 최종적으로 모든 Decoder Layer에 들어가게 된다. Decoder에서는 <eos>가 등장할 때까지 연산을 수행하고 Context vector로 압축하는 과정이 사라져서 Bottle neck 현상을 방지할 수 있었다.
+마지막 Layer에서 출력된 값이 최종적으로 모든 Decoder Layer에 들어가게 된다. Decoder에서는 eos가 등장할 때까지 연산을 수행하고 Context vector로 압축하는 과정이 사라져서 Bottle neck 현상을 방지할 수 있었다.
 
 
 ■ Decoder:
+
+Output 단어를 받아서 마찬가지로 Positional Encoding 과정을 거치고 Decoder 또한 Encoder처럼 6개의 Layer를 쌓는다. 
+
+이때, 그림에서 2번째 Multi-Head Attention이 받는 것이 Encoder 파트에서 출력된 Key와 Value값을 받고, Decoder 첫번째 Masked Multi-Head Attention으로 부터 Query를 받아서 연산을 수행한다. 6번의 Layer 연산 끝에는 Linear화하고 Softmax를 취해 최종적인 확률값을 반환한다. 
+
+
+## 3.2 Attention
+
+input으로부터 Query, Key, Value를 생성(복제)한다. 그 후 각각의 Query, Key를 연산하고 스케일링하여 Softmax를 취하면 확률값이 나오게 되는데 이 값을 Value와 곱하면 최종적인 Attention 값을 구할 수 있다. 이 결과를 통해 각각의 단어가 어떤 단어와 연관되어 있는지 수치적으로 확인할 수 있다.
