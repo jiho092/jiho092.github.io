@@ -58,6 +58,8 @@ Transformer모델은 그림에서 보는 것처럼 RNN 구조를 사용하지 �
 
 논문에서는 Layer의 수가 6개로 나와있다. 이것은 최적의 수가 아닌 논문에서 임의로 설정한 Layer의 수 이다.
 
+또한 Multi-Head Attention에 들어가는 세가지 방향의 화살표는 input에서 뽑아낸 Query,Key, Value를 의미한다.
+
 ### 1. input Embedding
 
 ![input](/assets/images/Transformer/input.png.png){: .align-center}
@@ -93,5 +95,7 @@ Residual Learning은 그림에서 왼쪽으로 나가서 Multi-Head Attention을
 이 방법을 사용하면 기존 정보를 입력 받으면서 잔여 부분만 학습되도록하여 모델 수렴속도가 높아지고 Global Optim을 찾으면서 모델 성능이 올라가게 된다.
 
 위 4개의 과정이 Encoder Layer 하나의 과정이고 Layer만큼 반복하여 연산을 수행한다. 여기서 Layer들의 parameter는 각각 다르다.
+
+마지막 Layer에서 출력된 값이 최종적으로 모든 Decoder Layer에 들어가게 된다.
 
 ■ Decoder:
