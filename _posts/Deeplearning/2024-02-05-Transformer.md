@@ -50,7 +50,41 @@ Transformer모델은 그림에서 보는 것처럼 RNN 구조를 사용하지 �
 
 ## 3.1 Encoder and Decoder Stacks
 
+
+![encoder-decoder](/assets/images/Transformer/encoder-decoder.png.png){: .align-center}
+
+
 ■ Encoder:
+
+논문에서는 Layer의 수가 6개로 나와있다. 이것은 최적의 수가 아닌 논문에서 임의로 설정한 Layer의 수 이다.
+
+### 1. input Embedding
+
+![input](/assets/images/Transformer/input.png.png){: .align-center}
+
+먼저 자연어를 컴퓨터로 연산하기 위해 input Embedding 과정을 거친다. 이 과정은 위 이미지와 같은 방법으로 수행되는 것을 알 수 있고, 블로그에 방법을 리뷰해 놓았으니 참고하길 바란다.
+
+### 2. Positional Encoding
+
+Attention만을 사용하면 순차적으로 연산을 수행하는 것이 아니기 때문에, token을 처리할 때 단어의 순서정보를 알 수 없다. 따라서 단어의 순서 정보를 입력해주기 위해 Positional Encoding 과정이 필요하다.
+
+positional Encoding으로는 주로 다음과 같은 식을 사용한다.
+
+$PE_{(pos,2)} = sin(pos/10000^{2i/d_{model}})$
+
+$PE_{(pos,2i+1)} = cos(pos/10000^{2i/d_{model}})$
+
+해당 positional embedding 값과 input embedding 값을 elemental_wise하여 위치의 정보를 더하여 연산을 수행한다.
+
+### 3. Multi-head attention
+
+각각의 단어가 서로에게 연산하여 Attention score를 구하고 단어들의 연관성을 구한다.
+
+$Attention(Q,K,V) = softmax(\frac{QK^T}{\sqrt{d_k}})V$
+
+$MultiHead(Q,K,V) = Concat(head_1,head_2,...,head_h)W^O$
+
+$head_i = Attention(QW_i^Q,KW_i^K,VW_i^V)
 
 
 ■ Decoder:
