@@ -6,6 +6,10 @@ categories:
     - review #카테고리설정
 tag: 
     - ["논문","Transformer"] #테그
+
+date: 2023-10-09
+last_modified_at: 2023-10-09
+classes: wide        
 ---
 
 
