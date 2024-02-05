@@ -96,6 +96,7 @@ Residual Learning은 그림에서 왼쪽으로 나가서 Multi-Head Attention을
 
 위 4개의 과정이 Encoder Layer 하나의 과정이고 Layer만큼 반복하여 연산을 수행한다. 여기서 Layer들의 parameter는 각각 다르다.
 
-마지막 Layer에서 출력된 값이 최종적으로 모든 Decoder Layer에 들어가게 된다.
+마지막 Layer에서 출력된 값이 최종적으로 모든 Decoder Layer에 들어가게 된다. Decoder에서는 <eos>가 등장할 때까지 연산을 수행하고 Context vector로 압축하는 과정이 사라져서 Bottle neck 현상을 방지할 수 있었다.
+
 
 ■ Decoder:
