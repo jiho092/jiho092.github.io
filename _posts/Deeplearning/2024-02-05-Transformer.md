@@ -84,7 +84,14 @@ $Attention(Q,K,V) = softmax(\frac{QK^T}{\sqrt{d_k}})V$
 
 $MultiHead(Q,K,V) = Concat(head_1,head_2,...,head_h)W^O$
 
-$head_i = Attention(QW_i^Q,KW_i^K,VW_i^V)
+$head_i = Attention(QW_i^Q,KW_i^K,VW_i^V)$
 
+### 4. Residual Learning(잔여학습)
+
+Residual Learning은 그림에서 왼쪽으로 나가서 Multi-Head Attention을 거치치 않고 그대로 넘어가는 것을 의미한다. 
+
+이 방법을 사용하면 기존 정보를 입력 받으면서 잔여 부분만 학습되도록하여 모델 수렴속도가 높아지고 Global Optim을 찾으면서 모델 성능이 올라가게 된다.
+
+위 4개의 과정이 Encoder Layer 하나의 과정이고 Layer만큼 반복하여 연산을 수행한다. 여기서 Layer들의 parameter는 각각 다르다.
 
 ■ Decoder:
