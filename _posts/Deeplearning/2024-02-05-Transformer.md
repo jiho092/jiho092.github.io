@@ -33,3 +33,24 @@ classes: wide
 RNN, LSTM, GRU 등의 모델은 sequence에 포함되어 있는 token 위치정보를 먼저 정렬한 후 $h_t$를 반복적으로 갱신하여 계산을 수행하였다. 따라서 병렬처리가 어려웠고, memory적으로도 비효율적이었다.
 
 이후 Attention을 사용하여 어떤 단어가 중요한지 weight를 부여하여 보안을 해왔지만, 여전히 RNN 기반 모델들과 함께 사용되었다. 이 논문에서는 오로지 Attention 기법만 사용하여 연산을 수행하였다.
+
+# 2. Background
+
+생략
+
+# 3. Model Architecture
+
+Transformer는 기본적으로 Encoder-Decoder 구조를 가지고 있다.
+
+![Transformer_model](/assets/images/Transformer/transformer_model.png){: .align-center}
+
+Transformer모델은 그림에서 보는 것처럼 RNN 구조를 사용하지 않는다. 따라서 단어의 순서를 알려주기 위해 positional encoding을 사용한다. 이 방법은 이후 논문에서도 많이 쓰인다.
+
+또한 Encoder, Decoder 모두 N개의 Layer가 반복되는 구조임을 확인할 수 있다. 이제 Encoder, Decoder 구조에 대해 알아보자
+
+## 3.1 Encoder and Decoder Stacks
+
+■ Encoder:
+
+
+■ Decoder:
