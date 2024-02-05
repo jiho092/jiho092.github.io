@@ -51,7 +51,7 @@ Transformer모델은 그림에서 보는 것처럼 RNN 구조를 사용하지 �
 ## 3.1 Encoder and Decoder Stacks
 
 
-![encoder-decoder](/assets/images/Transformer/encoder-decoder.png.png){: .align-center}
+![encoder-decoder](/assets/images/Transformer/encoder-decoder.png){: .align-center}
 
 
 ■ Encoder:
@@ -62,7 +62,7 @@ Transformer모델은 그림에서 보는 것처럼 RNN 구조를 사용하지 �
 
 ### 1. input Embedding
 
-![input](/assets/images/Transformer/input.png.png){: .align-center}
+![input](/assets/images/Transformer/input.png){: .align-center}
 
 먼저 자연어를 컴퓨터로 연산하기 위해 input Embedding 과정을 거친다. 이 과정은 위 이미지와 같은 방법으로 수행되는 것을 알 수 있고, 블로그에 방법을 리뷰해 놓았으니 참고하길 바란다.
 
