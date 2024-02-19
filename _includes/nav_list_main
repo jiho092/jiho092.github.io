@@ -42,6 +42,17 @@
                     {% endif %}
                 {% endfor %}
             </ul>
+            <ul>
+                <!--Link to the article at the address /categories/deeplearning-CV, which is a page that collects articles in the Deeplearning category-->
+                <!--Display the number of posts with that category with category[1].size-->
+                {% for category in site.categories %}
+                    {% if category[0] == "cs224n" %}
+                        <li><a href="/categories/cs224n" class="">cs224n ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+
 
          <span class="nav__sub-title">통계학</span>
              <ul>
