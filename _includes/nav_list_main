@@ -51,7 +51,14 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-
+        <span class="nav__sub-title">이상치 탐지</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "anomaly_detection" %}
+                        <li><a href="/categories/anomaly_detection" class="">이상치 탐지 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>    
 
 
          <span class="nav__sub-title">통계학</span>
