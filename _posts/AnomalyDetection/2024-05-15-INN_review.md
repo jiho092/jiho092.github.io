@@ -64,3 +64,15 @@ INN method를 그림으로 보면 아래 그림과 같다.
 3. 다양한 supervised learning task에서 안정적이고 우월한 성능을 보인다.
 
 # 2. Related works
+
+실험에서 결합하여 사용한 기법들을 소개해준다.
+
+1. Deep k-NN
+2. MentorMix
+3. MixUp
+4. MentorNet
+
+# 3. Integration with the nearest neighbors
+
+## 3.1 Notation & Definition
+
