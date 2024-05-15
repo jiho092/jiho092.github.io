@@ -3,7 +3,7 @@ layout: single
 title: "INN method paper review" #제목
 excerpt : ""
 categories: 
-    - anomaly_detection #카테고리설정
+    - anomalydetection #카테고리설정
 tag: 
     - ["image","anomaly", "ood","noisy label"] #테그
 
@@ -23,4 +23,8 @@ noise label 문제를 다룰 때, 좋은 성능을 보였던 모델들은 memori
 INN method는 계산량이 많지만 안정적이고 좋은 성능을 보인다.
 
 # 1. Introduction
+
+clean labeled data를 얻기 위해 전문가가 annotaition을 하는 것은 비용적으로, 시간적으로 많은 비용이 발생한다.
+반면 인터넷 search를 통해 data를 수집하면 적은 비용으로 data를 수집할 수 있지만, 정확도가 떨어진다.
+그래서 비용도 줄이고 정확도도 올리기 위해서 Noise label 문제를 해결할 필요가 있다.
 
