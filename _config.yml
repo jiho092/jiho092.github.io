@@ -106,7 +106,7 @@ analytics:
 author:
   name             : "JIHO LEE"
   avatar           : "/assets/images/sideimage.jpg" # path of avatar image, e.g. 
-  bio              : "통계학, 딥러닝을 공부하고 있습니다."
+  bio              : #"통계학, 딥러닝을 공부하고 있습니다."
   location         : #"South Korea"
   # email            : "leejiho092@naver.com"
   links:
