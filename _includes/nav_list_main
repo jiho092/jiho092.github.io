@@ -54,8 +54,8 @@
         <span class="nav__sub-title">이상치 탐지</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "anomaly_detection" %}
-                        <li><a href="/categories/anomaly_detection" class="">이상치 탐지 ({{category[1].size}})</a></li>
+                    {% if category[0] == "anomalydetection" %}
+                        <li><a href="/categories/anomalydetection" class="">이상치 탐지 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>    

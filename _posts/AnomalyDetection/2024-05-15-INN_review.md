@@ -9,7 +9,7 @@ tag:
 
 date: 2024-05-15
 last_modified_at: 2024-05-15
-classes: wide    
+#classes: wide    
 ---
 
 # 0. Abstract

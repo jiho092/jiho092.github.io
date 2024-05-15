@@ -3,7 +3,7 @@ layout: single
 title: "이미지 이상치 탐지" #제목
 excerpt : ""
 categories: 
-    - anomaly_detection #카테고리설정
+    - anomalydetection #카테고리설정
 tag: 
     - ["image","anomaly", "ood"] #테그
 
