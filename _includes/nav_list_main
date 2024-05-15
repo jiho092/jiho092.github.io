@@ -55,7 +55,7 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "anomalydetection" %}
-                        <li><a href="/categories/anomalydetection" class="">이상치 탐지 ({{category[1].size}})</a></li>
+                        <li><a href="/categories/anomalydetection" class="">이상치탐지 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>    
