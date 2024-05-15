@@ -41,3 +41,11 @@ Memorization effect는 학습 과정에서 clean label sample에 대해서는 Lo
 
 
 ## 1.2 INN Method
+논문에서는 이러한 문제를 해결하기 위해 INN method를 제안한다.
+
+이 방법은 Clean label sample과 Noise label sample의 neighbor regions이 training epoch과 관계없이 일관되게 다르다는 관측으로 부터 시작한다.
+이 논문에서는 이것을 consistency effect라고 부른다. 
+
+INN method를 그림으로 보면 아래 그림과 같다.
+
+![INN](/assets/images/anomalydetection/INN/INN_figure.png)
