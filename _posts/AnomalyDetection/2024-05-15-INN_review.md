@@ -28,3 +28,16 @@ clean labeled data를 얻기 위해 전문가가 annotaition을 하는 것은 �
 반면 인터넷 search를 통해 data를 수집하면 적은 비용으로 data를 수집할 수 있지만, 정확도가 떨어진다.
 그래서 비용도 줄이고 정확도도 올리기 위해서 Noise label 문제를 해결할 필요가 있다.
 
+
+## 1.1 Memorization effect Method
+Noise label 문제를 해결하는 방법에는 여러가지가 존재하는데, 그 중 대표적인 방법이 Memorization effect를 사용하는 방법이다.
+
+Memorization effect는 학습 과정에서 clean label sample에 대해서는 Loss가 빠르게 감소하고, noisy label sample에서는 Loss가 느리게 감소하는 것을 이용한다.
+이 방법은 간단하고, 성능이 좋기 때문에 그동안에 많은 연구에서 사용해왔다.
+
+그러나 이 방법에는 몇가지 약점이 존재한다.
+1. training epoch(iteration)를 어느 정도로 설정해야하는지 알기 어렵다.
+2. data의 오염 정도가 심하거나 class imbalance가 존재할 때 좋은 성능을 보이지 못한다.
+
+
+## 1.2 INN Method
