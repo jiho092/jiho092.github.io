@@ -1,5 +1,5 @@
 ---
-title: "블로그"
+title: "이상치탐지"
 layout: archive
 permalink: categories/anomalydetection
 author_profile: true

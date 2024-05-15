@@ -25,7 +25,9 @@ INN method는 계산량이 많지만 안정적이고 좋은 성능을 보인다.
 # 1. Introduction
 
 clean labeled data를 얻기 위해 전문가가 annotaition을 하는 것은 비용적으로, 시간적으로 많은 비용이 발생한다.
+
 반면 인터넷 search를 통해 data를 수집하면 적은 비용으로 data를 수집할 수 있지만, 정확도가 떨어진다.
+
 그래서 비용도 줄이고 정확도도 올리기 위해서 Noise label 문제를 해결할 필요가 있다.
 
 
@@ -44,6 +46,7 @@ Memorization effect는 학습 과정에서 clean label sample에 대해서는 Lo
 논문에서는 이러한 문제를 해결하기 위해 INN method를 제안한다.
 
 이 방법은 Clean label sample과 Noise label sample의 neighbor regions이 training epoch과 관계없이 일관되게 다르다는 관측으로 부터 시작한다.
+
 이 논문에서는 이것을 consistency effect라고 부른다. 
 
 INN method를 그림으로 보면 아래 그림과 같다.
