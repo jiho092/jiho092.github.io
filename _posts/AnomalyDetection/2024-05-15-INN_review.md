@@ -12,6 +12,8 @@ last_modified_at: 2024-05-15
 #classes: wide    
 ---
 
+[INN: A Method Identifying Clean-annotated Samples via Consistency Effect in Deep Neural Networks](https://arxiv.org/pdf/2106.15185){: .btn .btn--primary}
+
 # 0. Abstract
 
 noise label 문제를 다룰 때, 좋은 성능을 보였던 모델들은 memorization effect를 loss로 사용하는 전략을 사용했다.
@@ -52,3 +54,13 @@ Memorization effect는 학습 과정에서 clean label sample에 대해서는 Lo
 INN method를 그림으로 보면 아래 그림과 같다.
 
 ![INN](/assets/images/anomalydetection/INN/INN_figure.png)
+
+그림을 보면 Noisy labeled sample의 경우 Neighbor region의 평균 결과값(consistency effect)이 작은 것을 확인할 수 있다.
+
+### 1.2.1 Properties of INN
+
+1. small-loss method보다 계산량이 많다.
+2. 심한 데이터 오염이나 data imbalance 문제에서 좋은 성능을 보인다.
+3. 다양한 supervised learning task에서 안정적이고 우월한 성능을 보인다.
+
+# 2. Related works
