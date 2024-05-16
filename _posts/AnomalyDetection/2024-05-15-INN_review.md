@@ -90,3 +90,6 @@ if $y \neq y^*$, then sample $(x,y)$ is noisy label
 * $\tilde{x}$ : nearedst neighbor training input of $x$
 
 ## 3.2 Consistency effect
+
+* $x^m = (x + \tilde{x})/2$
+* $h(\tilde{x} ; \hat{\eta})$ is most close to $h(x ; \hat{\eta})$
