@@ -87,7 +87,7 @@ if $y \neq y^*$, then sample $(x,y)$ is noisy label
 * $\mathcal{D}^tr = {(x_i,y_i)}$ : training dataset
 * $\mathcal{C}^tr = {(x,y) \in \mathcal{D}^tr : y = y^*}$ : Clean sample
 * $\mathcal{N}^tr = {(x,y) \in \mathcal{D}^tr : y \neq y^*}$ : Noisy sample
-* $\tilde{x}$ : nearedst neighbor training input of $x$
+* $\tilde{x}$ : nearest neighbor training input of $x$
 
 ## 3.2 Consistency effect
 
