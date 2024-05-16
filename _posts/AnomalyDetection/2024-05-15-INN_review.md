@@ -79,3 +79,6 @@ INN method를 그림으로 보면 아래 그림과 같다.
 * $x \in \mathbb{R}^d$ : input vector
 * $y \in [K]$ : observe label
 * $y^* \in [K]$ : ground-truth label
+
+if $y = y^*$, then sample $(x,y)$ is cleanly label
+if $y \neq y^*$, then sample $(x,y)$ is noisy label
