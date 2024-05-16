@@ -76,4 +76,6 @@ INN method를 그림으로 보면 아래 그림과 같다.
 
 ## 3.1 Notation & Definition
 
-* $x \in \mathcal{R}^d$
+* $x \in \mathcal{R}^d$ : input vector
+* $y \in [K]$ : observe label
+* $y^* \in [K]$ : ground-truth label
