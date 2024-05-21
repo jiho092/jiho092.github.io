@@ -128,7 +128,7 @@ training epochs $T^{inn}$ 에 대해 data  $\mathcal{D}^tr$을 loss function $l$
 이 논문에서는 loss function으로 **Mixup** objective function을 사용하였다.
 이 때 clean data인지 noisy data인지 식별하기 위한 함수(점수)는 다음과 같다.
 
-$I(x;\hat{\theta},\tilde{x})$ = $f_y(x^m;\hat{\theta})
+$I(x;\hat{\theta},\tilde{x})$ = $f_y(x^m;\hat{\theta})$
 
 추가적인 실험을 통해 이 함수(점수)를 수정해 나갔다.
 
@@ -146,7 +146,7 @@ $I(x;\hat{\theta},\tilde{x})$ = $f_y(x^m;\hat{\theta})
 
 ![INN](/assets/images/anomalydetection/INN/image6.png)
 
-- $\tilde{\Chi} = (\tilde{x_1},...,\tilde{x_L})$ 이 L nearest neighbor set이라고 할 때,
+- $\tilde{\chi} = (\tilde{x_1},...,\tilde{x_L})$ 이 L nearest neighbor set이라고 할 때,
 위 (1),(2)에 따라 적분을 했을 때 정확도가 증가하고, L의 수가 커질 수록 정확도가 증가하는 것을 확인할 수 있다. 따라서 최종적으로 수정한 Score function은 다음과 같다.
 
 ![INN](/assets/images/anomalydetection/INN/image7.png)
