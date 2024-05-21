@@ -120,3 +120,33 @@ epoch을 잘 결정한다면 좋은 성능을 보일 수 있지만, 현실적으
 따라서 $\tilde{x}$ 와 $x$ 사이에 $f_y(.)$ 가 작아지는 region이 존재한다.
 
 ## 3.3 INN method
+
+이 절에서는 consistency effect를 이용한 INN method에 대해 설명한다.
+
+training epochs $T^{inn}$ 에 대해 data  $\mathcal{D}^tr$을 loss function $l$로 학습시킨 prediction model을 $f(..,\hat{\theta})$ 라하자.
+
+이 논문에서는 loss function으로 **Mixup** objective function을 사용하였다.
+이 때 clean data인지 noisy data인지 식별하기 위한 함수(점수)는 다음과 같다.
+
+$I(x;\hat{\theta},\tilde{x})$ = $f_y(x^m;\hat{\theta})
+
+추가적인 실험을 통해 이 함수(점수)를 수정해 나갔다.
+
+(1). Consitency effect를 충분히 활용하기 위해, $x, \tilde{x}$ 사이 전체 구간에서 적분한다.
+
+- consistency effect는 $x^m$ 보다 $x, \tilde{x}$ 사이의 input vector에서 많이 발생하기 때문에
+
+![INN](/assets/images/anomalydetection/INN/image4.png)
+
+(2). multiple neighbor sample을 사용하는 것이 clean label을 더 정확히 식별하는데 도움을 준다.
+
+![INN](/assets/images/anomalydetection/INN/image5.png)
+
+(3). Trapezoidal rule(사다리꼴 룰)
+
+![INN](/assets/images/anomalydetection/INN/image6.png)
+
+- $\tilde{\Chi} = (\tilde{x_1},...,\tilde{x_L})$ 이 L nearest neighbor set이라고 할 때,
+위 (1),(2)에 따라 적분을 했을 때 정확도가 증가하고, L의 수가 커질 수록 정확도가 증가하는 것을 확인할 수 있다. 따라서 최종적으로 수정한 Score function은 다음과 같다.
+
+![INN](/assets/images/anomalydetection/INN/image7.png)
