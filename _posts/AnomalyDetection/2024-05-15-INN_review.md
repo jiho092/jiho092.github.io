@@ -92,4 +92,13 @@ if $y \neq y^*$, then sample $(x,y)$ is noisy label
 ## 3.2 Consistency effect
 
 * $x^m = (x + \tilde{x})/2$
+* $\tilde{x}$ : nearest neighbor training input of $x$
 * $h(\tilde{x} ; \hat{\eta})$ is most close to $h(x ; \hat{\eta})$
+* $h(..,\hat{\eta})$ : model layer중 끝에서 두번째 output
+
+이 때 $x^m$ 은 $x$ 의 neighbor region에 위치한다. 이 논문에서는 clean label에 의해 얼마나 prediction value가 다른지 조사하였고, prediction model을 추정하였다.
+또한 아래 4개의 기댓값을 정의하였다.
+
+![INN](/assets/images/anomalydetection/INN/image1.png)
+
+$E_{cor}, E_{inc}$ 은 각각 clean, noisy data의 예측값을 의미하고, $E_{cor}^m, E_{inc}^m$ 은 negihbor region의 prediction value의 기댓값을 의미한다.
