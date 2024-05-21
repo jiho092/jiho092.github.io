@@ -99,6 +99,24 @@ if $y \neq y^*$, then sample $(x,y)$ is noisy label
 이 때 $x^m$ 은 $x$ 의 neighbor region에 위치한다. 이 논문에서는 clean label에 의해 얼마나 prediction value가 다른지 조사하였고, prediction model을 추정하였다.
 또한 아래 4개의 기댓값을 정의하였다.
 
-![INN](/assets/images/anomalydetection/INN/image1.png)
+![INN](/assets/images/anomalydetection/INN/image2.png)
 
 $E_{cor}, E_{inc}$ 은 각각 clean, noisy data의 예측값을 의미하고, $E_{cor}^m, E_{inc}^m$ 은 negihbor region의 prediction value의 기댓값을 의미한다.
+
+![INN](/assets/images/anomalydetection/INN/image3.png)
+
+그림 2를 보았을 때, memorization effect($E_{cor}, E_{inc}$ 가 이른 epochs에서 많이 달라짐)을 확인할 수 있다. 그러나 epoch이 늘어날 수록 그 차이는 감소하는 것을 확인할 수 있다.
+이 의미는 training이후 각 sample에서 $f_y(x)$ 값을 비교하여 clean, nosiy를 구별하기 어렵다는 것이다.
+
+epoch을 잘 결정한다면 좋은 성능을 보일 수 있지만, 현실적으로 epoch을 결정하는 것이 어렵다.
+
+반면 두 neighbor region의 prediction의 기댓값을 확인해보면 training epoch과 관계없이 충분히 차이가 나는 것을 확인할 수 있다. 즉, clean data와 noisy data를 구분할 수 있다. 논문에서는 이 현상을 **consistency effect** 라고 부른다. (**주황색 실선과 점선**)
+
+이 현상은 두가지 이유로 발생한다.
+
+(1). $(x,y)$ 가 noisy sample일 떄, label과 $\tilde{x}$ 의 label이 일치하지 않는 경향이 있고, 이것이 작은 예측값 $f_y(x^m)$ 을 산출한다.
+(2). 만약 $y, \tilde{y}$가 같을지라도, $\tilde{x}$ 가 $x$에 가깝지 않을 수 있다.
+
+따라서 $\tilde{x}$ 와 $x$ 사이에 $f_y(.)$ 가 작아지는 region이 존재한다.
+
+## 3.3 INN method
