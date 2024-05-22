@@ -125,6 +125,10 @@ epoch을 잘 결정한다면 좋은 성능을 보일 수 있지만, 현실적으
 
 training epochs $T^{inn}$ 에 대해 data  $\mathcal{D}^tr$을 loss function $l$로 학습시킨 prediction model을 $f(..,\hat{\theta})$ 라하자.
 
+* $z=(x,y) \in \mathcal{D}^tr $
+* $T^{inn}$ : training epoch
+
+
 이 논문에서는 loss function으로 **Mixup** objective function을 사용하였다.
 이 때 clean data인지 noisy data인지 식별하기 위한 함수(점수)는 다음과 같다.
 
@@ -150,3 +154,16 @@ $I(x;\hat{\theta},\tilde{x})$ = $f_y(x^m;\hat{\theta})$
 위 (1),(2)에 따라 적분을 했을 때 정확도가 증가하고, L의 수가 커질 수록 정확도가 증가하는 것을 확인할 수 있다. 따라서 최종적으로 수정한 Score function은 다음과 같다.
 
 ![INN](/assets/images/anomalydetection/INN/image7.png)
+
+* H : the number of trapezoids
+* $x_{l,h} = \frac{H-h}{H}x + \frac{h}{H}\tilde{x_l}$
+
+논문에서는 $H,L$을 10으로 고정시켰다.
+
+$I(z;\hat{\theta},\tilde{\chi})$ 의 값이 크다면, Clean label이라고 판단할 수 있다. 이 방법은 epoch의 수가 늘어나도 consistency effect 덕분에 좋은 성능을 보일 수 있다.
+
+앞으로 $I(z;\hat{\theta},\tilde{\chi})$ 는 $I(z)$ 로 축약하여 사용한다.
+
+### 3.3.1 Lemma 1.
+
+![INN](/assets/images/anomalydetection/INN/image8.png)
