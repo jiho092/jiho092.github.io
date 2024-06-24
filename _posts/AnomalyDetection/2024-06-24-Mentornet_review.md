@@ -7,8 +7,8 @@ categories:
 tag: 
     - ["classification","anomaly", "ood","noisy label"] #테그
 
-date: 2024-05-15
-last_modified_at: 2024-05-15
+date: 2024-06-24
+last_modified_at: 2024-06-24
 #classes: wide    
 ---
 
@@ -20,4 +20,7 @@ Deep learning 학습은 단순한 패턴을 먼저 학습하는 패턴이 존재
 
 ## 2.1 Notation
 
-* $\mathcal{D} = {(x_1,y_1),...,(x_n,y_n)}$
+* $\mathcal{D} = {(x_1,y_1),...,(x_n,y_n)}$ : data set
+* $y_i \in {0,1}^m$ : m개의 class에 대한 noise label vector
+* $g_s(x_i,w)$ : StudentNet의 discriminative function
+* $v \in \mathbb{R}^{n x m}$
