@@ -60,7 +60,7 @@
                 {% endfor %}
             </ul>    
         
-            <span class="nav__sub-title">NoiseLabel</span>
+        <span class="nav__sub-title">NoiseLabel</span>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "NoiseLabel" %}
