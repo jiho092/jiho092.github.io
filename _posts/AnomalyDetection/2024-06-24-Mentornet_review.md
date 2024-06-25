@@ -32,3 +32,9 @@ Deep learning 학습은 단순한 패턴을 먼저 학습하는 패턴이 존재
 
 ![Image1](/assets/images/anomalydetection/Mentornet/image2.png)
 논문에서는 $v$ 를 위와 같이 loss가 $\lambda$ 보다 작으면 1로 두어 select하고, $\lambda$ 보다 크다면 0으로 두어 select하지 않는다. threshold가 작을 때는 small loss sample이 고려되고, 클 때는 larger loss sample이 고려된다.
+
+# 3. Architecture and Algorithm
+![Image1](/assets/images/anomalydetection/Mentornet/image3.png){: width = 50% height = 50%}
+![Image1](/assets/images/anomalydetection/Mentornet/image4.png)
+
+<img src>
