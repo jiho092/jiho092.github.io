@@ -46,3 +46,13 @@ Deep learning 학습은 단순한 패턴을 먼저 학습하는 패턴이 존재
 
 
 # 4. Experiment
+Noise 종류에는 크게 두가지가 존재한다. 하나는 class의 labeling이 섞이는 경우이고, 다른 하나는 label이 random(uniform)하게 확률적으로 섞이는 경우이다. 이 논문에서는 실험을 위해 임의적으로 Noise를 부여한 경우와 real-world에서의 noise label을 가지는 경우를 다루고 있다.
+
+## 4.1 Experiment on controlled corrupted labels
+이 장에서는 임의적으로 Noise label을 생성하여 MentorNet을 검증한다. 이 때, unifrom random 확률 $p$ 에대해 label을 변경하는데 0.2, 0.4, 0.8인 경우에 대해 학습을 진행하고 validation dataset은 clean한 상태를 유지한다.
+
+* Dataset
+    
+    1. CIFAR-10 : (32X32, color, classes : 10), 50,000 training dataset, 10,000 validation dataset
+    2. CIFAR-100 : (32X32, color, classes : 100), 50,000 training dataset, 10,000 validation dataset
+    3. ImageNet : (299X299, color, classes : 1000), 1.2 milion training set, 50k validation set
