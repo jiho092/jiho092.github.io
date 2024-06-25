@@ -17,10 +17,18 @@ supervised learning에서 학습을 진행할 때에는 데이터가 정확한 L
 
 # 2.  Preliminary on Curriculum Learning
 Deep learning 학습은 단순한 패턴을 먼저 학습하는 패턴이 존재한다. 따라서 Noise label을 가진 데이터에 대해서는 비교적 큰 Loss를 가지고 있다. MentorNet은 이 특징을 이용한다.
+이 논문은 one-hot labeling에 대해 다룬다.
 
 ## 2.1 Notation
 
-* $\mathcal{D} = {(x_1,y_1),...,(x_n,y_n)}$ : data set
+* $\mathcal{D} = [{(x_1,y_1),...,(x_n,y_n)}]$ : data set
 * $y_i \in {0,1}^m$ : m개의 class에 대한 noise label vector
 * $g_s(x_i,w)$ : StudentNet의 discriminative function
-* $v \in \mathbb{R}^{n x m}$
+* $v \in \mathbb{R}^{n \times m}$
+
+![Image1](/assets/images/anomalydetection/Mentornet/image1.png)
+
+* $G$ : curriculum, parameterized by $\lambda$
+
+![Image1](/assets/images/anomalydetection/Mentornet/image2.png)
+논문에서는 $v$ 를 위와 같이 loss가 $\lambda$ 보다 작으면 1로 두어 select하고, $\lambda$ 보다 크다면 0으로 두어 select하지 않는다. threshold가 작을 때는 small loss sample이 고려되고, 클 때는 larger loss sample이 고려된다.
