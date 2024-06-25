@@ -125,3 +125,10 @@ align을 사용하면 이미지의 위치를 설정할 수 있다.
 
 
 $f(x) = x^2+3x+2$
+
+# 5. text centering
+
+```python
+<p align="center"> 
+```
+<p align="center"> 이 코드를 사용하고 text를 입력하면 글을 가운데로 정렬할 수 있다.

@@ -28,21 +28,21 @@ Deep learning 학습은 단순한 패턴을 먼저 학습하는 패턴이 존재
 * $g_s(x_i,w)$ : StudentNet의 discriminative function
 * $v \in \mathbb{R}^{n \times m}$
 
-![Image1](/assets/images/anomalydetection/Mentornet/image1.png)
+![Image1](/assets/images/anomalydetection/Mentornet/image1.png){: .align-center}
 
 * $G$ : curriculum, parameterized by $\lambda$
 
-![Image1](/assets/images/anomalydetection/Mentornet/image2.png)
+![Image1](/assets/images/anomalydetection/Mentornet/image2.png){: .align-center}
 
 논문에서는 $v$ 를 위와 같이 loss가 $\lambda$ 보다 작으면 1로 두어 select하고, $\lambda$ 보다 크다면 0으로 두어 select하지 않는다. threshold가 작을 때는 small loss sample이 고려되고, 클 때는 larger loss sample이 고려된다.
 
 # 3. Architecture and Algorithm
-![Image1](/assets/images/anomalydetection/Mentornet/image3.png)
+![Image1](/assets/images/anomalydetection/Mentornet/image3.png){: .align-center}
 
 논문에서는 Curriculum learning **(CL)** 방법으로 self-paced learning방법을 사용한다. 이 방법은 $\lambda$ 이하의 loss를 가지는 데이터만 학습을 진행하는 방법이다. 논문에서는 가중치를 0과 1로 두어, clean data에 대해서는 학습을 진행하고, noise data에 대해서는 학습을 진행하지 않는다. 따라서 CL 방법을 MentorNet에서는 Noise인지 Clean데이터인지 판별을 하고, 이후 학습을 진행하는 것을 볼 수 있다.
 알고리즘은 다음과 같다.
 
-![Image1](/assets/images/anomalydetection/Mentornet/image4.png)
+![Image1](/assets/images/anomalydetection/Mentornet/image4.png){: .align-center}
 
 
 # 4. Experiment
@@ -64,7 +64,7 @@ Noise 종류에는 크게 두가지가 존재한다. 하나는 class의 labeling
 
 아래 표는 Clean training data로 학습을 진행했을 때의 정확도와 parameter 수이다.
     
-![Image1](/assets/images/anomalydetection/Mentornet/image5.png)
+![Image1](/assets/images/anomalydetection/Mentornet/image5.png){: .align-center}
 
 baseline으로는 $l2$ weight decay, drop out(0.2~0.9)로 학습된 StudentNet을 사용하고 Clean dataset을 이용하여 최적의 hyperparameter를 찾는다.
 
@@ -74,21 +74,21 @@ baseline으로는 $l2$ weight decay, drop out(0.2~0.9)로 학습된 StudentNet�
     
 이에 대한 결과는 아래 표와 같다.
 
-![Image1](/assets/images/anomalydetection/Mentornet/image6.png)
+![Image1](/assets/images/anomalydetection/Mentornet/image6.png){: .align-center}
 
 
 
 Resnet-101을 사용했을 때와 Inception StudentNet을 사용하였을 때, 기존 방법들에서는 대부분 Self-Paced 방법이 좋은 성능을 보여왔고, MentorNet을 통해 개선이 되는 결과를 확인할 수 있다. 특히 data-driven curriculum을 사용한 MentorNetDD에서 대부분 가장 좋은 성능을 보인 것을 확인할 수 있다. 기존의 그러나 noise probability를 0.8로 설정하였을 때는, 아직 성능 개선이 필요해보인다.
 
-![Image1](/assets/images/anomalydetection/Mentornet/image7.jpg)
+![Image1](/assets/images/anomalydetection/Mentornet/image7.jpg){: .align-center}
 
 그림 (a)는 training epoch당 validation Error를 표현한 그림이고, (b)는 mini-batch당 Training Error이다. 그림을 보면 모두 학습이 진행될 수록 Training Error가 줄어든다. Validation Error를 확인해보면 MentorNetDD의 경우에는 epoch이 증가하더라도 Error가 증가하지 않는 것을 볼 수 있다. 그러나 다른 method를 보면 특정 epoch 이상에서는 Error가 증가하는 것을 확인할 수 있다. 따라서 MentorNet이 noise data에 대해 robust하다는 결과를 알 수 있다.
 
-![Image1](/assets/images/anomalydetection/Mentornet/image8.jpg)
+![Image1](/assets/images/anomalydetection/Mentornet/image8.jpg){: .align-center}
 
 이 표는 40%의 Noise를 가질 때 다른 Noise problem을 다룬 방법들과 비교한 표인데, MentorNet이 SOTA보다 좋은 성능을 보인 것을 확인할 수 있다.
 
-![Image1](/assets/images/anomalydetection/Mentornet/image9.jpg)
+![Image1](/assets/images/anomalydetection/Mentornet/image9.jpg){: .align-center}
 
 ImageNet에 대해서도 기존 방법들보다 성능이 향상된 것을 확인할 수 있다.
 
@@ -97,5 +97,3 @@ ImageNet에 대해서도 기존 방법들보다 성능이 향상된 것을 확�
 # 5. Conclusion
 
 이 논문에서는 Data에 Noise가 존재할 때, Robust하게 훈련을 진행할 수 있는 방법인 MentorNet을 제시하였으며, epoch과 다른 정보들과 관계없이 overfitting을 제어할 수 있는 효과를 보이고, 실제 Noise data로 학습했을 때, 다른 모델들에 비해 좋은 성능을 보이는 결과를 도출하였다.
-
-#<p align="center">
