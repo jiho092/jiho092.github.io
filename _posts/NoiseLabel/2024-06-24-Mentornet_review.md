@@ -56,3 +56,20 @@ Noise 종류에는 크게 두가지가 존재한다. 하나는 class의 labeling
     1. CIFAR-10 : (32X32, color, classes : 10), 50,000 training dataset, 10,000 validation dataset
     2. CIFAR-100 : (32X32, color, classes : 100), 50,000 training dataset, 10,000 validation dataset
     3. ImageNet : (299X299, color, classes : 1000), 1.2 milion training set, 50k validation set
+
+* StudentNet(CNN 사용)
+
+    1. resnet-101
+    2. interception_resnet v2
+
+아래 표는 Clean training data로 학습을 진행했을 때의 정확도와 parameter 수이다.
+    
+![Image1](/assets/images/anomalydetection/Mentornet/image5.png)
+
+baseline으로는 $l2$ weight decay, drop out(0.2~0.9)로 학습된 StudentNet을 사용하고 Clean dataset을 이용하여 최적의 hyperparameter를 찾는다.
+
+* Model
+
+    논문에서 제안한 모델은 두 가지가 있다. 하나는 Predifined curriculum을 사용하여 학습한 MentorNetPD이고, 다른 하나는 data-driven curriculum을 사용한 MentorNetDD이다. 이에 대한 결과는 아래 표와 같다.
+
+![Image1](/assets/images/anomalydetection/Mentornet/image6.png)
