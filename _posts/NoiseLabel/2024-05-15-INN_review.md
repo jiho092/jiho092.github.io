@@ -3,7 +3,7 @@ layout: single
 title: "INN method paper review" #제목
 excerpt : ""
 categories: 
-    - anomalydetection #카테고리설정
+    - NoiseLabel #카테고리설정
 tag: 
     - ["image","anomaly", "ood","noisy label"] #테그
 
@@ -84,9 +84,9 @@ if $y = y^*$, then sample $(x,y)$ is cleanly label
 
 if $y \neq y^*$, then sample $(x,y)$ is noisy label
 
-* $\mathcal{D}^tr = {(x_i,y_i)}$ : training dataset
-* $\mathcal{C}^tr = {(x,y) \in \mathcal{D}^tr : y = y^*}$ : Clean sample
-* $\mathcal{N}^tr = {(x,y) \in \mathcal{D}^tr : y \neq y^*}$ : Noisy sample
+* $\mathcal{D}^{tr} = {(x_i,y_i)}$ : training dataset
+* $\mathcal{C}^{tr} = {(x,y) \in \mathcal{D}^{tr} : y = y^*}$ : Clean sample
+* $\mathcal{N}^{tr} = {(x,y) \in \mathcal{D}^{tr} : y \neq y^*}$ : Noisy sample
 * $\tilde{x}$ : nearest neighbor training input of $x$
 
 ## 3.2 Consistency effect
@@ -123,9 +123,9 @@ epoch을 잘 결정한다면 좋은 성능을 보일 수 있지만, 현실적으
 
 이 절에서는 consistency effect를 이용한 INN method에 대해 설명한다.
 
-training epochs $T^{inn}$ 에 대해 data  $\mathcal{D}^tr$을 loss function $l$로 학습시킨 prediction model을 $f(..,\hat{\theta})$ 라하자.
+training epochs $T^{inn}$ 에 대해 data  $\mathcal{D}^{tr}$을 loss function $l$로 학습시킨 prediction model을 $f(..,\hat{\theta})$ 라하자.
 
-* $z=(x,y) \in \mathcal{D}^tr $
+* $z=(x,y) \in \mathcal{D}^{tr} $
 * $T^{inn}$ : training epoch
 
 

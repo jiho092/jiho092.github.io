@@ -3,7 +3,7 @@ layout: single
 title: "MentorNet paper review" #제목
 excerpt : ""
 categories: 
-    - anomalydetection #카테고리설정
+    - NoiseLabel #카테고리설정
 tag: 
     - ["classification","anomaly", "ood","noisy label"] #테그
 
