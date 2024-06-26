@@ -12,4 +12,6 @@ last_modified_at: 2024-06-25
 #classes: wide    
 ---
 
+[Beyond Synthetic Noise: Deep Learning on Controlled Noisy Labels](https://arxiv.org/pdf/1911.09781){: .btn .btn--primary}
+
 # 0. Abstract
