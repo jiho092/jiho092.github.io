@@ -7,8 +7,8 @@ categories:
 tag: 
     - ["classification","anomaly", "ood","noisy label"] #테그
 
-date: 2024-06-24
-last_modified_at: 2024-06-24
+date: 2024-06-22
+last_modified_at: 2024-06-22
 #classes: wide    
 ---
 
