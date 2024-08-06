@@ -27,6 +27,8 @@ Image Inpainting은 손상된 이미지를 타당하게 복원하는 것이 목�
 
 # 1. Inpainting
 
+![Image1](/assets/images/inpainting/survey/image1.jpg){: .align-center}
+
 1. 전략
     * Progressive inpainting
     * Structural Information Guided Inpainting
