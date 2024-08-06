@@ -15,3 +15,10 @@ last_modified_at: 2024-06-25
 [Beyond Synthetic Noise: Deep Learning on Controlled Noisy Labels](https://arxiv.org/pdf/1911.09781){: .btn .btn--primary}
 
 # 0. Abstract
+
+
+# 1. background
+
+## 1.1 Curriculum learning(MentorNet)
+
+## 1.2 MixUp
