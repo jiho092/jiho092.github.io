@@ -132,3 +132,7 @@ $f(x) = x^2+3x+2$
 <p align="center"> 
 ```
 <p align="center"> 이 코드를 사용하고 text를 입력하면 글을 가운데로 정렬할 수 있다.
+
+# 6. VS code viewer(MarkDown preview)
+
+Ctrl + Shift + V

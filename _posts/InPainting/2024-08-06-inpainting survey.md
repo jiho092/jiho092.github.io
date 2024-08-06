@@ -5,7 +5,7 @@ excerpt : ""
 categories: 
     - Inpainting #카테고리설정
 tag: 
-    - ["NLP"] #테그
+    - [""] #테그
 
 date: 2024-08-06
 last_modified_at: 2024-08-06
@@ -33,6 +33,7 @@ Image Inpainting은 손상된 이미지를 타당하게 복원하는 것이 목�
     * Progressive inpainting
     * Structural Information Guided Inpainting
     * Attention Based
+    * convolutions-aware inpainting
     * Pluralistic Inpainting
 
 2. 구조
@@ -47,3 +48,48 @@ Image Inpainting은 손상된 이미지를 타당하게 복원하는 것이 목�
     * Others (Markov Random, Total Variational)
 
 # 2. Inpainting strategies
+
+여기에서는 Inpainting 알고리즘 전략을 크게 5개로 나누어 확인한다.
+
+* 전략
+    * Progressive inpainting
+    * Structural Information Guided Inpainting
+    * Attention Based
+    * convolutions-aware inpainting
+    * Pluralistic Inpainting
+
+## 2.1 Progressive inpainting
+
+Progressive inpainting에서도 5개의 subtext로 나누어 본다.
+
+* coarse-to-fine
+* part-to-full
+* low-to-high-resolution
+* structure-to-content
+* mask-to-image
+
+### 2.1.1 Coarse-to-fine inpainting
+
+![Image1](/assets/images/inpainting/survey/image2.jpg){: .align-center}
+
+Coarse-to-fine은 Coarse Network, Refine Network 두 step이 존재하고, Coarse Network는 위 그림과 같이 단순한 encoder-decoder 구조를 가지고, Reconstruction Loss를 사용한다. 
+
+Refine Network에서는 Encoder인 두 Network가 병렬적으로 연결되어있다. 이것이 병합되어 decoder를 통과한다. 이때 Loss는 Reconstrucntion Loss, Adversarial Loss가 있다.
+
+### 2.1.2 Part-to-full inpainting
+
+이 전략은 inpainting을 여러 subtask로 나누고, 각 subtask는 가장 바깥쪽부터 중심으로 가면서 복원을 수행한다. 중간 결과는 LSTM으로 공유된다.
+
+### 2.1.3 Low-to-high-resolution inpainting
+
+Image superresolution 방법
+
+### 2.1.4 Structure-to-content inpainting
+
+일반적으로 사용하는 구조는 edge이다. edge-to-content inpainting은 2-stage network architecture를 사용한다. 또한 segmentation 구조도 존재한다. 자세한 것은 reference를 참고하자.
+
+### 2.1.5 Mask-to-image inpainting
+
+이전의 inpainting algorithm은 missing region을 알고있고, mask로 나타낸다고 가정한다. 그러나 mask를 생성하는 것이 많은 비용이 들기 떄문에, 자동적으로 mask를 생성하는 것이 필수적이다. 
+
+대표적으로 Wang [35]이 제안한 논문에서는 이를 위해 2-stage network architecture를 사용한다. mask prediction network의 output은 잠재적으로 image를 나타낸다.
