@@ -26,6 +26,7 @@ Image Inpainting은 손상된 이미지를 타당하게 복원하는 것이 목�
 # Inpainting
 
 1. 전략
+    * Progressive inpainting
     * Structural Information Guided Inpainting
     * Attention Based
     * Pluralistic Inpainting
@@ -41,4 +42,3 @@ Image Inpainting은 손상된 이미지를 타당하게 복원하는 것이 목�
     * Adversarial Loss (WGAN, LSGAN, Global and Local adversarial Loss, PatchGAN)
     * Others (Markov Random, Total Variational)
 
-    
