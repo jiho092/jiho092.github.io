@@ -51,8 +51,6 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-
-        <span class="nav__sub-title">Inpainting</span>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Inpainting" %}
@@ -60,8 +58,6 @@
                     {% endif %}
                 {% endfor %}
             </ul> 
-
-        <span class="nav__sub-title">이상치 탐지</span>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "anomalydetection" %}
@@ -69,7 +65,7 @@
                     {% endif %}
                 {% endfor %}
             </ul>    
-        
+    
         <span class="nav__sub-title">NoiseLabel</span>
             <ul>
                 {% for category in site.categories %}
