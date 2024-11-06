@@ -14,7 +14,7 @@ tag:
 #     nav: "docs"
 ---
 
-이 글은 깃허브 블로그 작성법을 공부하면서 작성한 게시글입니다.
+내가 블로그를 만들때 사용하면 좋은 정보들을 써보자
 
 # 1. 이미지 삽입 방법
 먼저 이미지를 지정 경로에 저장한다.
@@ -136,3 +136,11 @@ $f(x) = x^2+3x+2$
 # 6. VS code viewer(MarkDown preview)
 
 Ctrl + Shift + V
+
+# 7. 공백 만들기
+
+&nbsp;&nbsp;
+
+```python
+&nbsp;&nbsp;
+```
