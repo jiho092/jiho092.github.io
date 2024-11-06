@@ -57,7 +57,14 @@
                         <li><a href="/categories/Inpainting" class="">Inpainting ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
-            </ul> 
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "GenerativeModel" %}
+                        <li><a href="/categories/GenerativeModel" class="">생성모델 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>     
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "anomalydetection" %}
