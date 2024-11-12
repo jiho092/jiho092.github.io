@@ -303,5 +303,5 @@ AIRBNB
 
 
 ```python
-AIRBNB.to_csv('C:/Users/leeji/Desktop/AIRBNB.csv', index = False)
+AIRBNB.to_csv('./AIRBNB.csv', index = False)
 ```
