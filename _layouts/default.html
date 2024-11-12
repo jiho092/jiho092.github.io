@@ -1,6 +1,8 @@
 ---
 ---
 
+
+
 <!doctype html>
 <!--
   Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
@@ -15,6 +17,9 @@
     {% if page.use_math %}
      {% include mathjax_support.html %}
     {% endif %}
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
+    </script>
   </head>
 
   <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
@@ -43,9 +48,7 @@
   </body>
 </html>
 
-<script type="text/javascript" async
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
-</script>
+
 
 
 <style> 
