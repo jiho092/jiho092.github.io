@@ -1,5 +1,5 @@
 ---
-title: "Computer vision"
+title: "Computer Vision"
 layout: archive
 permalink: categories/deeplearningCV
 author_profile: true
