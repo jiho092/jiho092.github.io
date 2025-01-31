@@ -1,5 +1,5 @@
 ---
-title: "딥러닝 NLP"
+title: "NLP"
 layout: archive
 permalink: categories/deeplearningNLP
 author_profile: true

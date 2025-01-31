@@ -1,5 +1,5 @@
 ---
-title: "딥러닝 기초"
+title: "딥러닝"
 layout: archive
 permalink: categories/deeplearningbasic
 author_profile: true

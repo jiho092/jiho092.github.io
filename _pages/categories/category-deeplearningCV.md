@@ -1,5 +1,5 @@
 ---
-title: "딥러닝 CV"
+title: "Computer vision"
 layout: archive
 permalink: categories/deeplearningCV
 author_profile: true
