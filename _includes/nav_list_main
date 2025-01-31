@@ -29,7 +29,7 @@
                 <!--Display the number of posts with that category with category[1].size-->
                 {% for category in site.categories %}
                     {% if category[0] == "deeplearningNLP" %}
-                        <li><a href="/categories/deeplearningNLP" class="">NLP 자연어처리 ({{category[1].size}})</a></li>
+                        <li><a href="/categories/deeplearningNLP" class="">NLP ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -38,7 +38,7 @@
                 <!--Display the number of posts with that category with category[1].size-->
                 {% for category in site.categories %}
                     {% if category[0] == "deeplearningCV" %}
-                        <li><a href="/categories/deeplearningCV" class="">CV 컴퓨터비전 ({{category[1].size}})</a></li>
+                        <li><a href="/categories/deeplearningCV" class="">Computer Vision ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -48,13 +48,6 @@
                 {% for category in site.categories %}
                     {% if category[0] == "cs224n" %}
                         <li><a href="/categories/cs224n" class="">cs224n ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Inpainting" %}
-                        <li><a href="/categories/Inpainting" class="">Inpainting ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
