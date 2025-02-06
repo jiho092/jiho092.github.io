@@ -52,26 +52,24 @@ classes: #wide
 $$
 F(G(x)) \approx x
 $$
+
 $$
 G(F(y)) \approx y
 $$
 
- 데이터는 **BDD100K** dataset으로 부터 6000개의 주간 이미지와 이미지를 수집하여 CycleGan을 훈련시켰고, 이미지는 480X270으로 resize하여 day2night, night2day converter를 얻어냈다.
+데이터는 **BDD100K** dataset으로 부터 6000개의 주간 이미지와 이미지를 수집하여 CycleGan을 훈련시켰고, 이미지는 480X270으로 resize하여 day2night, night2day converter를 얻어냈다.
+## 3.2 Converting Image to the Daytime During Inference
+&nbsp;&nbsp; 첫 번째 방법은 야간 이미지를 주간 이미지로 변환하는 것이다. 특히, 카메라로 수집한 야간 이미지를 semantic segmentation에 사용 가능한 domain인 주간 이미지로 변환한다. 
+&nbsp;&nbsp; 이 방법은 모델을 재학습 시킬 필요가 없고, 안정적인 데이터로 학습된 ERF-PSPNet의 원래 학습된 weight를 그대로 사용할 수 있다. 추가적으로 night-day 변환과 semantic segmentation 추론을 분리할 수 있다. 그러나 inference 과정의 computational cost가 증가하게 되고 이것은 real-time semantic segmentation에서 단점이 될 수 있다. 각 추론 과정에서 CycleGAN으로 변환된 이미지는 ERF-PSPNet에 먹여진다. 효율적인 segmentation network가 정확한 segmentation map을 예측하는데 쉽게 사용될 수 있지만, 480X270 image에서 CycleGAN의 정방향은 거의 1초가 소요된다. 이것은 매우 느린 속도이며, real-time에서 기대하기 어렵다. 또 다른 단점은 original image와 비교하여 GAN으로 만든 image가 bias가 존재한다는 것이다. 
+## 3.3 Gernerating Nighttime Images to Expand the Training Set
 
- ## 3.2 Converting Image to the Daytime During Inference
+&nbsp;&nbsp; 두 번째 방법은 **BDD10K** 주간 이미지를 segmentation label과 함께 야간이미지로 변환시키는 것이다. 이 때, 생성된 야간 이미지 training set은 ERF-PSPNet에 넣어진다. 이 아이디어는 nighttime dataset의 명확한 라벨이 없다는 점에서 나왔다.
+&nbsp;&nbsp; 이 방법의 장점은 trained model의 inference 과정에서 추가적인 계산이 필요 없다는 것이다. 이로 인해 real-time property를 유지할 수 있다. 논문의 실험에서 night image 생성 비율이 semantic segmenetation 정확도에 얼마나 영향을 주는지 탐구하였고, 실험을 바탕으로 training dataset에 필수적인 night image를 추가하였다.
+&nbsp;&nbsp; 그러나 이 방법의 단점은 모델을 재학습시킬 때, 시간 소모가 크다는 점과 모든 종류의 환경에서 robust하지 않을 수 있다는 점이다. 추가적으로 CycleGAN은 parameters의 크기가 거대하기 때문에, 원본 사이즈가 아닌 480X270으로 resize하여 학습을 시켰다. 이러한 이유로 GAN으로 오직 480X270 이미지만 사용 가능하고, 최종 예측 정확도에 영향을 주는 것을 피할 수 없었다.
 
- &nbsp;&nbsp; 첫 번째 방법은 야간 이미지를 주간 이미지로 변환하는 것이다. 특히, 카메라로 수집한 야간 이미지를 semantic segmentation에 사용 가능한 domain인 주간 이미지로 변환한다. 
- &nbsp;&nbsp; 이 방법은 모델을 재학습 시킬 필요가 없고, 안정적인 데이터로 학습된 ERF-PSPNet의 원래 학습된 weight를 그대로 사용할 수 있다. 추가적으로 night-day 변환과 semantic segmentation 추론을 분리할 수 있다. 그러나 inference 과정의 computational cost가 증가하게 되고 이것은 real-time semantic segmentation에서 단점이 될 수 있다. 각 추론 과정에서 CycleGAN으로 변환된 이미지는 ERF-PSPNet에 먹여진다. 효율적인 segmentation network가 정확한 segmentation map을 예측하는데 쉽게 사용될 수 있지만, 480X270 image에서 CycleGAN의 정방향은 거의 1초가 소요된다. 이것은 매우 느린 속도이며, real-time에서 기대하기 어렵다. 또 다른 단점은 original image와 비교하여 GAN으로 만든 image가 bias가 존재한다는 것이다. 
+# 4. Experiments.
 
- ## 3.3 Gernerating Nighttime Images to Expand the Training Set
-
- &nbsp;&nbsp; 두 번째 방법은 **BDD10K** 주간 이미지를 segmentation label과 함께 야간이미지로 변환시키는 것이다. 이 때, 생성된 야간 이미지 training set은 ERF-PSPNet에 넣어진다. 이 아이디어는 nighttime dataset의 명확한 라벨이 없다는 점에서 나왔다.
- &nbsp;&nbsp; 이 방법의 장점은 trained model의 inference 과정에서 추가적인 계산이 필요 없다는 것이다. 이로 인해 real-time property를 유지할 수 있다. 논문의 실험에서 night image 생성 비율이 semantic segmenetation 정확도에 얼마나 영향을 주는지 탐구하였고, 실험을 바탕으로 training dataset에 필수적인 night image를 추가하였다.
- &nbsp;&nbsp; 그러나 이 방법의 단점은 모델을 재학습시킬 때, 시간 소모가 크다는 점과 모든 종류의 환경에서 robust하지 않을 수 있다는 점이다. 추가적으로 CycleGAN은 parameters의 크기가 거대하기 때문에, 원본 사이즈가 아닌 480X270으로 resize하여 학습을 시켰다. 이러한 이유로 GAN으로 오직 480X270 이미지만 사용 가능하고, 최종 예측 정확도에 영향을 주는 것을 피할 수 없었다.
-
- # 4. Experiments.
-
- ## 4.1 Datasets and Training
+## 4.1 Datasets and Training
 
 
 ![Image5](/assets/images/EFFPSPNet/image3.jpg){: .align-center}
