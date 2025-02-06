@@ -3,7 +3,7 @@ layout: single
 title: "Distilling Semantic Priors from SAM to Efficient Image Restoration Models" #제목
 excerpt : ""
 categories: 
-    - Inpainting #카테고리설정
+    - deeplearningCV #카테고리설정
 tag: 
     - [""] #테그
 
