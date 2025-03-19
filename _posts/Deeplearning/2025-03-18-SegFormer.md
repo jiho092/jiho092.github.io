@@ -336,3 +336,8 @@ $$
 # 5. Conclusion
 
 &nbsp;&nbsp; 이 논문에서는 SegFormer라는 효율적이고 성능이 좋은 architecture를 제안하였고, positional encoding free, hierarchical Transformer encoder, lightweight all-MLP decoder라는 특징을 가지고 있다. 한가지 한계점은 3.7M parameter를 가진 CNN model보다 작지만 100K memory만 존재하는 edge device에서 잘 작동할지는 명확하지 않다.
+
+# Appendix
+
+![Image5](/assets/images/SegFormer/image10.jpg){: .align-center}
+![Image5](/assets/images/SegFormer/image11.jpg){: .align-center}
