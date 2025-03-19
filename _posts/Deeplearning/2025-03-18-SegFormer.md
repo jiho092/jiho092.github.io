@@ -309,3 +309,17 @@ $$
 &nbsp;&nbsp; 3.2절에서는 Transformer가 CNN 모델에 비해 더 큰 효과적인 receptive field를 갖고 있어 MLP Decoder가 다른 CNN 모델보다 우수한 성능을 낸다고 주장했다. 여기에서는 ResNet이나 ResNeXt와 같은 CNN 기반 Encoder와 함께 MLP Decoder를 사용할 때의 성능을 비교한다. 결과는 table1 (d)와 같다. 결과를 확인하면 CNN 계열의 모델들보다 효율면에서도 앞서고 성능면에서도 앞서는 것을 확인할 수 있다.
 
 ## 4.3 Comparison to state of the art methods
+
+
+
+&nbsp;&nbsp; 여기에서는 ADE20K, Cityscapes, COCO-Stuff dataset에 대해 기존 모델들과 비교를 진행한다. 아래 그림은은 ADE20K, Cityscapes에 대해 Flops, FPS, mIoU를 비교한 표이다.
+
+![Image5](/assets/images/SegFormer/image7.jpg){: .align-center}
+
+&nbsp;&nbsp;ADE20K에서 SegFormer-B0는 3.8M parameter와 8.4G FLOPs를 사용하여 37.4% mIoU를 얻었고, 다른 Real-Time method들과 비교했을 때, parameters, FLOPs, FPS, mIoU에서 모두 우수한 성능을 보인 것을 확인할 수 있다. DeepLabV3+와 비교하였을 때, SegFormer-B0는 7.4 FPS만큼 빠르고, mIoU도 3.4% 높다. 또한이전의 SETR보다 좋은 성능을 이며, SOTA에 달성하였다.
+
+![Image5](/assets/images/SegFormer/image8.jpg){: .align-center}
+
+&nbsp;&nbsp;Cityscapes에서 SegFormer-B0는 15.2 FPS에서 76.2% mIoU를 기록했고, SegFormer-B5는 47.6 FPS에서 71.9% mIoU를 기록했다. DeeplabV3+보다 17.3% 더 빠르고, 4.2% 더 높으며, ICNet보다 우수한 성능을 보였다. SegFormer-B5는 84.0% mIoU를 기록하며 모든 기존 방법보다 우수한 성능을 보였고, SETR보다 5배, DeepLabV3+보다 4배 더 작은 모델이다.
+
+&nbsp;&nbsp; 마지막으로 COCO-Stuff에서는 SegFormer를 확인해보겠다. 기존 방법들은 이 데이터셋에 대한 결과를 제공하지 않지만, 가장 대표적인 방법들인 DeeplabV3+, OCRNet, SETR을 재현하여 비교했다. SegFormer-B5는 46.7% mIoU를 기록하며, 84.7M 파라미터로 SETR보다 0.9% 더 높은 성능을 보였고, SETR보다 4배 작은 모델로 효율성도 좋았다.
