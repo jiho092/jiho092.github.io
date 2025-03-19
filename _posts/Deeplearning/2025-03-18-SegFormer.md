@@ -323,3 +323,16 @@ $$
 &nbsp;&nbsp;Cityscapes에서 SegFormer-B0는 15.2 FPS에서 76.2% mIoU를 기록했고, SegFormer-B5는 47.6 FPS에서 71.9% mIoU를 기록했다. DeeplabV3+보다 17.3% 더 빠르고, 4.2% 더 높으며, ICNet보다 우수한 성능을 보였다. SegFormer-B5는 84.0% mIoU를 기록하며 모든 기존 방법보다 우수한 성능을 보였고, SETR보다 5배, DeepLabV3+보다 4배 더 작은 모델이다.
 
 &nbsp;&nbsp; 마지막으로 COCO-Stuff에서는 SegFormer를 확인해보겠다. 기존 방법들은 이 데이터셋에 대한 결과를 제공하지 않지만, 가장 대표적인 방법들인 DeeplabV3+, OCRNet, SETR을 재현하여 비교했다. SegFormer-B5는 46.7% mIoU를 기록하며, 84.7M 파라미터로 SETR보다 0.9% 더 높은 성능을 보였고, SETR보다 4배 작은 모델로 효율성도 좋았다.
+
+
+## 4.4 Robustness to natural corruptions
+
+&nbsp;&nbsp; Model Robustness는 자율 주행과 같은 많은 safety-critical task에서 중요하다. 여기에서는 SegFormer의 common corruption, perturbation에 대해 평가한다. 이를 위해 Cityscapes에 noise, blur, weather, digital categories와 같은 16가지 알고리즘을 통해 손상된 데이터 Cityscapes-C를 생성한다. 이 결과를 DeepLabV3+ 및 다른 방법들과 비교한다. 결과는 아래 그림과 같다.
+
+![Image5](/assets/images/SegFormer/image9.jpg){: .align-center}
+
+&nbsp;&nbsp; SegFormer에서는 이전 방법들에 비해 매우 Robust하였다. Gaussian nosie에서 588%, snow weather에서 295% 향상되었고, 이것은 Segformer가 Robust하여 safety-critical task에서 좋은 성능을 보일 것임을 알 수 있다.
+
+# 5. Conclusion
+
+&nbsp;&nbsp; 이 논문에서는 SegFormer라는 효율적이고 성능이 좋은 architecture를 제안하였고, positional encoding free, hierarchical Transformer encoder, lightweight all-MLP decoder라는 특징을 가지고 있다. 한가지 한계점은 3.7M parameter를 가진 CNN model보다 작지만 100K memory만 존재하는 edge device에서 잘 작동할지는 명확하지 않다.
