@@ -177,3 +177,31 @@ $$
 ## 3.2 Lightweight All-MLP Decoder
 
 &nbsp;&nbsp; SegFormer에서는 오직 MLP만 포함하는 Lightweight Decoder를 사용하며, 다른 방법들과 달리 수작업으로 만들어진 계산량이 많은 복잡한 component를 피한다. 이것이 가능한 이유는 CNN보다 Transformer Encoder가 Effective Receptive Field(ERF : 효과적 수용 공간)을 가지기 때문이다.
+
+&nbsp;&nbsp; All-MLP decoder는 4단계로 구성된다. 수식으로 표현하면 아래와 같다.
+
+1. multi-level feature $F_i$가 MiT Encoder를 통해 channel dimension을 통합하기 위해 MLP layer를 통과
+
+$$
+\hat{F_i} = \text{Linear}(C_i, C)(F_i), \forall i
+$$
+
+
+2.  feature가 $\frac{1}{4}$ 크기로 upsampling되어 함께 결합
+
+$$
+\hat{F_i} = \text{Upsample}\left( \frac{W}{4} \times \frac{W}{4} \right) (\hat{F_i}), \forall i
+$$
+
+3. MLP layer를 통해 Concat.된 feature $F$를 녹여내어 Segment mask를 예측하는데 필요한 feature로 변환
+
+$$
+F = \text{Linear}(4C, C)(\text{Concatenate}(\hat{F_i})), \forall i
+$$
+
+4. 또 다른 MLP layer를 사용하여 3에서 결합된 feature를 사용하여 **Predicted Segment mask $M$**을 예측
+
+$$
+M = \text{Linear}(C, N_{\text{cls}})(F)
+$$
+
