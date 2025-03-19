@@ -107,12 +107,13 @@ classes: #wide
 
 * input image size : $H \times W \times 3$의 형태태
 
-* $\frac{H}{2^{t+1}} \times \frac{W}{2^{t+1}} \times C_i$ 의 형태로 나누어 Hierarchical Feature 생성 $i \in {1,2,3,4}$, $C_i : i번째 계층의 채널 수$ 
+* patch의 수 :$\frac{H}{2^{t+1}} \times \frac{W}{2^{t+1}} \times C_i$ 의 형태로 나누어 Hierarchical Feature 생성 $i \in {1,2,3,4}$, ($C_i : i번째 계층의 채널 수$)
 
 * $F_i$ : $i$번째 계층의 feature map
 
-* patch merging을 통해 low resolution의 feature와 high resolution의 feature를 생성
-
+* patch merging(patch 결합)을 통해 low resolution의 feature와 high resolution의 feature를 생성
+    (아래 그림의 왼쪽과 같이이)
+![Image5](/assets/images/SegFormer/image12.jpg){: .align-center}
 
 ### 2. Overlapped Patch Merging
 
