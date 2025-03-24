@@ -138,6 +138,8 @@ classes: #wide
 
 ### 3. Efficient Self Attention
 
+![Image5](/assets/images/SegFormer/image13.jpg){: .align-center}
+
 &nbsp;&nbsp; Self Attention은 Transformer Encoder의 주요 computation bottleneck이다. 원래의 Self Attention에서는 $Q, K, V$의 차원이 동일하고 Sequence의 길이 $N$에 따라 계산 복잡도가 $O(N^2)$이었다. 
 
 $$
@@ -163,7 +165,7 @@ $$
 
 ### 4. Mix FFN
 
-&nbsp;&nbsp; ViT에서는 Positional Encoding을 사용하는데, 해상도가 고정되기 때문에 다른 해상도에서는 성능이 떨어질 수 있다. 이 문제를 해결하기 위해 **CPVT**는 3X3 Convolution과 positional Encoding을 함께 사용하여 구현하였다.
+&nbsp;&nbsp; ViT에서는 Positional Encoding을 사용하는데, 해상도가 고정되기 때문에 다른 해상도에서는 성능이 떨어질 수 있다. 이 문제를 해결하기 위해 **CPVT**는 3X3 Convolution과 positional Encoding을 함께 사용하여 구현하였다. (Convolution으로 positional encoding을 대체)
 
 &nbsp;&nbsp; 그러나 논문에서는 Positional Encoding이 Semantic Segmentation에서 필요없다고 주장한다. 대신 Mix-FFN을 도입하여 Zero padding이 위치 정보의 약점을 보완해준다. 이 과정은 다음 수식과 같다.
 
