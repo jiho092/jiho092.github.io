@@ -1,0 +1,141 @@
+---
+title: "코딩"
+layout: archive
+permalink: categories/coding
+author_profile: true
+sidebar_main: true
+---
+
+{% assign posts = site.categories.coding %}
+{% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}
+
+
+#  Sigmoid + BCELoss vs. BCEWithLogitsLoss
+
+---
+
+## 왜 `Sigmoid + BCELoss` 조합이 불안정할까?
+
+### BCE loss:
+
+$$
+\text{BCE} = - [ y \cdot \log(p) + (1 - y) \cdot \log(1 - p) ]
+$$
+
+- 여기서 $ p = \text{sigmoid}(x) $, $ x $는 모델 출력 (logit), $ y  : 0,1 $
+- sigmoid의 출력값이 **0 또는 1 근처일 때**, log(0) 또는 log(1 - 1) 계산이 발생할 수 있어 수치적으로 **폭발적인 loss 값**이 나옴
+
+---
+
+##  수치 불안정 예시
+
+```python
+import torch
+import torch.nn as nn
+
+# 매우 극단적인 logit 
+x = torch.tensor([-100.0, 100.0])
+y = torch.tensor([0.0, 1.0])
+
+sigmoid = nn.Sigmoid()
+bce = nn.BCELoss()
+
+p = sigmoid(x)
+loss = bce(p, y)
+
+print("Sigmoid output:", p)
+print("Loss:", loss)
+```
+
+### 결과:
+- x = -100 → sigmoid(x) ≈ 0 → log(0) → 무한대
+- x = 100 → sigmoid(x) ≈ 1 → log(1 - 1) → 무한대
+
+---
+
+## 해결책: `BCEWithLogitsLoss`
+
+```python
+import torch
+import torch.nn as nn
+
+x = torch.tensor([-100.0, 100.0])
+y = torch.tensor([0.0, 1.0])
+
+criterion = nn.BCEWithLogitsLoss()
+loss = criterion(x, y)
+
+print("Loss:", loss)
+```
+
+- 내부적으로 아래 수식을 사용하여 안정적으로 계산됨:
+
+$$
+\text{Loss} = \max(x, 0) - x \cdot y + \log(1 + e^{-|x|})
+$$
+
+- sigmoid와 BCE가 합쳐진 형태로 **log(0) 문제 없음**
+- 매우 큰/작은 logit에서도 안정적으로 작동
+
+---
+
+##  비교 요약
+
+| 조합 | 안정성 | 특징 |
+|------|--------|------|
+| `Sigmoid + BCELoss` |  낮음 | log(0) 위험 | 
+| `BCEWithLogitsLoss` |  높음 | 내부적으로 안정 처리 |
+
+---
+
+## 사용법
+
+###  Discriminator 구조
+
+```python
+class Discriminator(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.model = nn.Sequential(
+            nn.Conv2d(3, 64, kernel_size=4, stride=2, padding=1),
+            nn.LeakyReLU(0.2, inplace=True),
+            nn.Conv2d(64, 128, kernel_size=4, stride=2, padding=1),
+            nn.LeakyReLU(0.2, inplace=True),
+            nn.Conv2d(128, 256, kernel_size=4, stride=2, padding=1),
+            nn.LeakyReLU(0.2, inplace=True),
+            nn.Conv2d(256, 1, kernel_size=4, stride=2, padding=1)
+            # ❌ Sigmoid 제거!
+        )
+
+    def forward(self, x):
+        return self.model(x)
+```
+
+###  Loss
+
+```python
+criterion_GAN = nn.BCEWithLogitsLoss()
+```
+
+### 예시시
+
+```python
+real_output = D(real_img)         # logit 출력
+fake_output = D(fake_img.detach())
+
+loss_real = criterion_GAN(real_output, torch.ones_like(real_output))
+loss_fake = criterion_GAN(fake_output, torch.zeros_like(fake_output))
+loss_D = (loss_real + loss_fake) / 2
+```
+
+---
+
+##  결론
+
+- `Sigmoid + BCELoss`는 **이론적으로는 OK**지만, **수치적으로 매우 위험**
+- `BCEWithLogitsLoss`는 **안정적이고 실전에서 반드시 권장**
+- GAN, binary classifier 등에서는 **`BCEWithLogitsLoss` + no sigmoid** 조합
+
+```python
+D(x) → BCEWithLogitsLoss에 넣기기
+```
